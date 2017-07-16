@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory android:title="@string/set_player_name_category">
+
+        <EditTextPreference
+            android:defaultValue="Player 1"
+            android:key="edit_text_set_player_one_name"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:title="@string/edit_player_one_name_title" />
+        <EditTextPreference
+            android:defaultValue="Player 2"
+            android:key="edit_text_set_player_two_name"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:title="@string/edit_player_two_name_title" />
+
+    </PreferenceCategory>
+
+
+
+</PreferenceScreen>

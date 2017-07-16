@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Counts</string>
+    <string name="add_one_button">Add One</string>
+    <string name="reset_button">Reset</string>
+    <string name="display_count">0</string>
+    <string name="display_count_label">Count</string>
+</resources>

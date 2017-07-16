@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="jemin.uoregon.edu.pigver3_1"
+    android:versionCode="3"
+    android:versionName="3.0">
+
+    <application
+        android:icon="@drawable/pig_icon"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme"
+        android:allowBackup="true">
+        <activity
+            android:name=".FirstActivity"
+            android:label="@string/title_pig_game_version3_1">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".SecondActivity"
+            android:label="@string/title_pig_game_version3_1_second_activity"
+            android:parentActivityName=".FirstActivity" >
+        </activity>
+        <activity
+            android:name=".SettingsActivity"
+            android:label="@string/title_pig_game_version3_1_setting" >
+        </activity>
+        <activity
+            android:name=".AboutActivity"
+            android:label="@string/title_pig_game_version3_1_about" >
+        </activity>
+    </application>
+
+</manifest>

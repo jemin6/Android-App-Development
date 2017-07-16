@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Pig Game</string>
+    <string name="player_one_label">Player 1</string>
+    <string name="player_one_text" />
+    <string name="player_two_label">Player 2</string>
+    <string name="player_two_text" />
+    <string name="player_one_score_label">Score</string>
+    <string name="player_one_score">0</string>
+    <string name="player_two_score_label">Score</string>
+    <string name="player_two_score">0</string>
+    <string name="point_display_label">Points for this turn</string>
+    <string name="point_display">0</string>
+    <string name="display_turn" />
+    <string name="display_turn_label">\'s turn</string>
+    <string name="roll_button">Roll Die</string>
+    <string name="turn_button">End turn</string>
+    <string name="new_game_button">New Game</string>
+    <string name="save_name_button">Save name</string>
+</resources>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="jemin.uoregon.edu.lab1_part2.Count">
+
+    <Button
+        android:id="@+id/addOneButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/add_one_button"
+        android:textSize="40sp"
+        android:layout_marginTop="41dp"
+        android:layout_below="@+id/countLabel"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:id="@+id/resetButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="25dp"
+        android:layout_marginStart="25dp"
+        android:text="@string/reset_button"
+        android:textSize="40sp"
+        android:layout_alignBaseline="@+id/addOneButton"
+        android:layout_alignBottom="@+id/addOneButton"
+        android:layout_toRightOf="@+id/addOneButton"
+        android:layout_toEndOf="@+id/addOneButton" />
+
+    <TextView
+        android:id="@+id/count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/count"
+        android:textSize="70sp"
+        android:layout_marginLeft="72dp"
+        android:layout_marginStart="72dp"
+        android:layout_alignBaseline="@+id/countLabel"
+        android:layout_alignBottom="@+id/countLabel"
+        android:layout_toRightOf="@+id/addOneButton"
+        android:layout_toEndOf="@+id/addOneButton" />
+
+    <TextView
+        android:id="@+id/countLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:text="@string/count_label"
+        android:textSize="70sp"
+        android:layout_alignParentTop="true"
+        android:layout_alignRight="@+id/addOneButton"
+        android:layout_alignEnd="@+id/addOneButton" />
+
+</RelativeLayout>

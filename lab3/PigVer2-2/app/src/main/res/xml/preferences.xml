@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <CheckBoxPreference
+        android:key="check_box_remember_win_score"
+        android:title="@string/remember_win_score_title"
+        android:summary="@string/remember_win_score_summary"
+        android:defaultValue="true" />
+    <EditTextPreference
+        android:dependency="check_box_remember_win_score"
+        android:key="edit_text_set_win_score"
+        android:selectAllOnFocus="true"
+        android:singleLine="true"
+        android:title="@string/edit_win_score_title"
+        android:summary="@string/edit_win_score_summary"/>
+
+    <PreferenceCategory android:title="Preference category">
+
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="check_box_set_player_name"
+            android:title="@string/set_player_name_title"
+            android:summary="@string/set_player_name_summary" />
+        <EditTextPreference
+            android:defaultValue="Player 1"
+            android:dependency="check_box_set_player_name"
+            android:key="edit_text_set_player_one_name"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:title="@string/edit_player_one_name_title" />
+        <EditTextPreference
+            android:defaultValue="Player 2"
+            android:dependency="check_box_set_player_name"
+            android:key="edit_text_set_player_two_name"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:title="@string/edit_player_two_name_title" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

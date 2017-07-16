@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Large portrait -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <fragment
+        android:id="@+id/first_fragment"
+        android:name="jemin.uoregon.edu.pigver3_1.FirstFragment"
+        android:layout_width="match_parent"
+        android:layout_height="334dp"
+        tools:layout="@layout/first_fragment" />
+
+    <fragment
+        android:id="@+id/second_fragment"
+        android:name="jemin.uoregon.edu.pigver3_1.SecondFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        tools:layout="@layout/second_fragment" />
+</LinearLayout>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory android:title="Set user">
+
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="userName"
+            android:summaryOff="Not use user name"
+            android:summaryOn="Use user name"
+            android:title="Use user name"/>
+        <EditTextPreference
+            android:defaultValue="Je"
+            android:dependency="userName"
+            android:key="editUserName"
+            android:maxLines="1"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:title="Set user name" />
+        <ListPreference
+            android:defaultValue="0"
+            android:dependency="userName"
+            android:entries="@array/userNameOpen"
+            android:entryValues="@array/userNameOpen_values"
+            android:key="userNameOpen"
+            android:negativeButtonText="@null"
+            android:positiveButtonText="@null"
+            android:title="Privacy" />
+
+    </PreferenceCategory>
+    <PreferenceCategory android:title="Preference category">
+
+    </PreferenceCategory>
+
+
+</PreferenceScreen>
