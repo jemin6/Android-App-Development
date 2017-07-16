@@ -21,7 +21,7 @@ public class RSSItem {
     private String pred_in_cm = null;
     private String highlow = null;
 
-    // This is the format used in the weather XML file
+    // This is the format used in the XML file
     private SimpleDateFormat dateInFormat = new SimpleDateFormat("yyyy/MM/dd");  // <Date>2017/01/01</Date>
 
     // This is the format we want in our output
@@ -38,6 +38,7 @@ public class RSSItem {
             throw new RuntimeException(e);
         }
     }
+
 
     public void setTideDate(String pubDate) {
         this.tideDate = pubDate;
