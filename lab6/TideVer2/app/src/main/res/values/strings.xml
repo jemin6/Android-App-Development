@@ -1,4 +1,12 @@
 <resources>
     <string name="app_name">Tide Table Ver.2</string>
     <string name="show_tide_button">Show Tides</string>
+    <string name="spinner_label">Location:</string>
+    <string name="display_date" />
+
+    <string-array name="locations_array">
+        <item>Eugene</item>
+        <item>Florence</item>
+        <item>Newport</item>
+    </string-array>
 </resources>
