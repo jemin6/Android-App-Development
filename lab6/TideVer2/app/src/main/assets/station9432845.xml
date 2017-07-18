@@ -1,0 +1,330 @@
+
+	<datainfo>
+		<origin>NOAA/NOS/CO-OPS</origin>
+		<disclaimer>
+		Disclaimer: These data are based upon the latest information available as of the date of your request, and may differ from the published tide tables.
+		</disclaimer>
+	<datarange>Annual</datarange>
+		<producttype>Tide Prediction</producttype>
+		<stationname>Coos Bay</stationname>
+		<state>OR</state>
+		<stationid>9432845</stationid>
+	
+		<stationtype>Subordinate</stationtype>
+		<referencedToStationName>Charleston</referencedToStationName>
+		<referencedToStationId>9432780</referencedToStationId>
+		<HeightOffsetLow>* 0.88</HeightOffsetLow>
+		<HeightOffsetHigh>* 0.96</HeightOffsetHigh>
+		<TimeOffsetLow>88</TimeOffsetLow>
+		<TimeOffsetHigh>86</TimeOffsetHigh>
+		
+		<BeginDate>20170101 03:51</BeginDate>
+		<EndDate>20171231 18:22</EndDate>
+		
+		<dataUnits>Feet and Centimeters</dataUnits>
+		 
+	<Timezone>LST_LDT</Timezone>
+	<Datum>MLLW</Datum>
+	<IntervalType>High/Low</IntervalType>
+	<data>
+	
+			<item>
+				<date>2017/01/01</date>
+				<day>Sun</day>
+		
+				<time>03:51 AM</time>
+			
+				<pred_in_ft>6.70</pred_in_ft>
+				<pred_in_cm>204</pred_in_cm>
+			
+			<highlow>H</highlow>
+			
+			</item>
+		
+			<item>
+				<date>2017/01/01</date>
+				<day>Sun</day>
+		
+				<time>09:07 AM</time>
+			
+				<pred_in_ft>2.90</pred_in_ft>
+				<pred_in_cm>88</pred_in_cm>
+			
+			<highlow>L</highlow>
+			
+			</item>
+		
+			<item>
+				<date>2017/01/01</date>
+				<day>Sun</day>
+		
+				<time>02:54 PM</time>
+			
+				<pred_in_ft>7.57</pred_in_ft>
+				<pred_in_cm>231</pred_in_cm>
+			
+			<highlow>H</highlow>
+			
+			</item>
+		
+			<item>
+				<date>2017/01/01</date>
+				<day>Sun</day>
+		
+				<time>09:44 PM</time>
+			
+				<pred_in_ft>-0.28</pred_in_ft>
+				<pred_in_cm>-9</pred_in_cm>
+			
+			<highlow>L</highlow>
+			
+			</item>
+		
+			<item>
+				<date>2017/01/02</date>
+				<day>Mon</day>
+		
+				<time>04:30 AM</time>
+			
+				<pred_in_ft>6.77</pred_in_ft>
+				<pred_in_cm>206</pred_in_cm>
+			
+			<highlow>H</highlow>
+			
+			</item>
+		
+			<item>
+				<date>2017/01/02</date>
+				<day>Mon</day>
+		
+				<time>09:54 AM</time>
+			
+				<pred_in_ft>2.83</pred_in_ft>
+				<pred_in_cm>86</pred_in_cm>
+			
+			<highlow>L</highlow>
+			
+			</item>
+		
+			<item>
+				<date>2017/01/02</date>
+				<day>Mon</day>
+		
+				<time>03:37 PM</time>
+			
+				<pred_in_ft>7.20</pred_in_ft>
+				<pred_in_cm>219</pred_in_cm>
+			
+			<highlow>H</highlow>
+			
+			</item>
+		
+			<item>
+				<date>2017/01/02</date>
+				<day>Mon</day>
+		
+				<time>10:23 PM</time>
+			
+				<pred_in_ft>0.02</pred_in_ft>
+				<pred_in_cm>1</pred_in_cm>
+			
+			<highlow>L</highlow>
+			
+			</item>
+		
+			<item>
+				<date>2017/01/03</date>
+				<day>Tue</day>
+		
+				<time>05:11 AM</time>
+			
+				<pred_in_ft>6.87</pred_in_ft>
+				<pred_in_cm>209</pred_in_cm>
+			
+			<highlow>H</highlow>
+			
+			</item>
+		
+			<item>
+				<date>2017/01/03</date>
+				<day>Tue</day>
+		
+				<time>10:48 AM</time>
+			
+				<pred_in_ft>2.72</pred_in_ft>
+				<pred_in_cm>83</pred_in_cm>
+			
+			<highlow>L</highlow>
+			
+			</item>
+		
+			<item>
+				<date>2017/01/03</date>
+				<day>Tue</day>
+		
+				<time>04:28 PM</time>
+			
+				<pred_in_ft>6.73</pred_in_ft>
+				<pred_in_cm>205</pred_in_cm>
+			
+			<highlow>H</highlow>
+			
+			</item>
+		
+			<item>
+				<date>2017/01/03</date>
+				<day>Tue</day>
+		
+				<time>11:05 PM</time>
+			
+				<pred_in_ft>0.43</pred_in_ft>
+				<pred_in_cm>13</pred_in_cm>
+			
+			<highlow>L</highlow>
+			
+			</item>
+		
+			<item>
+				<date>2017/01/04</date>
+				<day>Wed</day>
+		
+				<time>05:55 AM</time>
+			
+				<pred_in_ft>7.02</pred_in_ft>
+				<pred_in_cm>214</pred_in_cm>
+			
+			<highlow>H</highlow>
+			
+			</item>
+		
+			<item>
+				<date>2017/01/04</date>
+				<day>Wed</day>
+		
+				<time>11:50 AM</time>
+			
+				<pred_in_ft>2.51</pred_in_ft>
+				<pred_in_cm>77</pred_in_cm>
+			
+			<highlow>L</highlow>
+			
+			</item>
+		
+			<item>
+				<date>2017/01/04</date>
+				<day>Wed</day>
+		
+				<time>05:29 PM</time>
+			
+				<pred_in_ft>6.21</pred_in_ft>
+				<pred_in_cm>189</pred_in_cm>
+			
+			<highlow>H</highlow>
+			
+			</item>
+		
+			<item>
+				<date>2017/01/04</date>
+				<day>Wed</day>
+		
+				<time>11:52 PM</time>
+			
+				<pred_in_ft>0.93</pred_in_ft>
+				<pred_in_cm>28</pred_in_cm>
+			
+			<highlow>L</highlow>
+			
+			</item>
+		
+			<item>
+				<date>2017/01/05</date>
+				<day>Thu</day>
+		
+				<time>06:42 AM</time>
+			
+				<pred_in_ft>7.24</pred_in_ft>
+				<pred_in_cm>221</pred_in_cm>
+			
+			<highlow>H</highlow>
+			
+			</item>
+		
+			<item>
+				<date>2017/01/05</date>
+				<day>Thu</day>
+		
+				<time>12:59 PM</time>
+			
+				<pred_in_ft>2.15</pred_in_ft>
+				<pred_in_cm>66</pred_in_cm>
+			
+			<highlow>L</highlow>
+			
+			</item>
+		
+			<item>
+				<date>2017/01/05</date>
+				<day>Thu</day>
+		
+				<time>06:43 PM</time>
+			
+				<pred_in_ft>5.75</pred_in_ft>
+				<pred_in_cm>175</pred_in_cm>
+			
+			<highlow>H</highlow>
+			
+			</item>
+		
+			<item>
+				<date>2017/01/06</date>
+				<day>Fri</day>
+		
+				<time>12:45 AM</time>
+			
+				<pred_in_ft>1.46</pred_in_ft>
+				<pred_in_cm>45</pred_in_cm>
+			
+			<highlow>L</highlow>
+			
+			</item>
+		
+			<item>
+				<date>2017/01/06</date>
+				<day>Fri</day>
+		
+				<time>07:33 AM</time>
+			
+				<pred_in_ft>7.51</pred_in_ft>
+				<pred_in_cm>229</pred_in_cm>
+			
+			<highlow>H</highlow>
+			
+			</item>
+		
+			<item>
+				<date>2017/01/06</date>
+				<day>Fri</day>
+		
+				<time>02:11 PM</time>
+			
+				<pred_in_ft>1.61</pred_in_ft>
+				<pred_in_cm>49</pred_in_cm>
+			
+			<highlow>L</highlow>
+			
+			</item>
+		
+			<item>
+				<date>2017/01/06</date>
+				<day>Fri</day>
+		
+				<time>08:07 PM</time>
+			
+				<pred_in_ft>5.51</pred_in_ft>
+				<pred_in_cm>168</pred_in_cm>
+			
+			<highlow>H</highlow>
+			
+			</item>
+    </data>
+    </datainfo>
