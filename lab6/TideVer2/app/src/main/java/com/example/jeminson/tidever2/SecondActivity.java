@@ -5,7 +5,6 @@ package com.example.jeminson.tidever2;
  */
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
@@ -13,13 +12,11 @@ import android.widget.TextView;
 public class SecondActivity extends AppCompatActivity {
 
     private TextView dateTextView;
-    private TextView dayTextView;
-    private TextView timeTextView;
-    private TextView predInFtTextView;
-    private TextView highLowTextView;
+    //private TextView dayTextView;
+    //private TextView timeTextView;
+    //private TextView predInFtTextView;
+    //private TextView highLowTextView;
 
-    // set up preferences
-    private SharedPreferences prefs;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,10 +33,11 @@ public class SecondActivity extends AppCompatActivity {
         Intent intent = getIntent();
 
         dateTextView = (TextView) findViewById(R.id.dateTextView);
-        dayTextView = (TextView) findViewById(R.id.dayTextView);
-        timeTextView = (TextView) findViewById(R.id.timeTextView);
-        predInFtTextView = (TextView) findViewById(R.id.predInFtTextView);
-        highLowTextView = (TextView) findViewById(R.id.highLowTextView);
+        dateTextView.setText("date");
+        //dayTextView = (TextView) findViewById(R.id.dayTextView);
+        //timeTextView = (TextView) findViewById(R.id.timeTextView);
+        //predInFtTextView = (TextView) findViewById(R.id.predInFtTextView);
+        //highLowTextView = (TextView) findViewById(R.id.highLowTextView);
 
 
     }

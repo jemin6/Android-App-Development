@@ -15,28 +15,33 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
+import android.widget.ArrayAdapter;
 import android.widget.DatePicker;
+import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Button;
 import android.view.View;
 import android.view.View.OnClickListener;
 
-public class FirstActivity extends AppCompatActivity implements OnClickListener, OnItemSelectedListener {
+public class FirstActivity extends AppCompatActivity implements OnClickListener {
 
     private static final String TAG = "FirstActivity";
 
-    //private DataAccessLayer dal = new DataAccessLayer(this);
-    //Cursor cursor = null;
-    //SimpleCursorAdapter adapter = null;
+    /*
     String locationSelection = "97420";
+    private DataAccessLayer dal = new DataAccessLayer(this);
+    */
+    Cursor cursor = null;
+    SimpleCursorAdapter adapter = null;
+
 
     private TextView mDisyplayDate;
     private DatePickerDialog.OnDateSetListener dateSetListener;
 
     private Button showTideButton;
 
-    private Spinner locationSpinner;
+    //private Spinner locationSpinner;
 
 
     @Override
@@ -45,9 +50,6 @@ public class FirstActivity extends AppCompatActivity implements OnClickListener,
         setContentView(R.layout.first_activity);
 
         mDisyplayDate = (TextView) findViewById(R.id.mDisyplayDate);
-
-        locationSpinner = (Spinner) findViewById(R.id.locationSpinner);
-        locationSpinner.setOnItemSelectedListener(this);
 
         mDisyplayDate.setOnClickListener(new View.OnClickListener() {
             @RequiresApi(api = Build.VERSION_CODES.N)
@@ -79,10 +81,35 @@ public class FirstActivity extends AppCompatActivity implements OnClickListener,
             }
         };
 
-
         showTideButton = (Button) findViewById(R.id.showTideButton);
         showTideButton.setOnClickListener(this);
 
+        /*
+        locationSpinner = (Spinner) findViewById(R.id.locationSpinner);
+        locationSpinner.setOnItemSelectedListener(this);
+
+        cursor = dal.getTideByLocation(locationSelection);
+        */
+/*
+        // Set up the adapter for the ListView to display the forecast
+        adapter = new SimpleCursorAdapter(this, R.layout.listview_items, cursor,
+                new String[]{TideSQLiteHelper.DATE,
+                        TideSQLiteHelper.DAY,
+                        TideSQLiteHelper.TIME,
+                        TideSQLiteHelper.PRED_IN_FT,
+                        TideSQLiteHelper.HIGH_LOW},
+                new int[]{
+                        R.id.dateTextView,
+                        R.id.dayTextView,
+                        R.id.timeTextView,
+                        R.id.predInFtTextView,
+                        R.id.highLowTextView
+                },
+                0 );	// no flags
+
+        ListView itemsListView = (ListView)findViewById(R.id.tideListView);
+        itemsListView.setAdapter(adapter);
+*/
     } // End onCreate
 
     @Override
@@ -92,10 +119,9 @@ public class FirstActivity extends AppCompatActivity implements OnClickListener,
             startActivity(intent);
         }
     } // End onClick
-
+/*
     @Override
-    public void onItemSelected(AdapterView<?> parent, View view, int position,
-                               long id) {
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
         switch (position){
             case 0:
                 locationSelection = "97420";
@@ -106,15 +132,14 @@ public class FirstActivity extends AppCompatActivity implements OnClickListener,
             case 2:
                 locationSelection = "97439";
         }
-        // Get a weather forecast the selected location
-        //cursor = dal.getTideByLocation(locationSelection);
-        //adapter.changeCursor(cursor);
+        // Get the selected location
+        cursor = dal.getTideByLocation(locationSelection);
+        adapter.changeCursor(cursor);
     }
 
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
         // TODO Auto-generated method stub
     }
-
-
+*/
 } // End FirstActivity
