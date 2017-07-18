@@ -23,6 +23,25 @@ public class DataAccessLayer {
 
     public DataAccessLayer(Context context) { this.context = context; }
 
+
+    // This is a temporary method for loading fixed data into the db
+    public void loadTestData(String stationId)
+    {
+        // Initialize database
+        TideSQLiteHelper helper = new TideSQLiteHelper(context);
+        SQLiteDatabase db = helper.getWritableDatabase();
+        // load the database with test data if it isn't already loaded
+        if (db.rawQuery("SELECT * FROM item WHERE " + TideSQLiteHelper.STATION_ID
+                + " = " + stationId, null).getCount() == 0)
+        {
+            loadDbFromXML("9432845");	//Coos Bay
+            loadDbFromXML("9434032"); // Florence
+            loadDbFromXML("9435385"); // Newport
+        }
+        db.close();
+    }
+
+
     // Parse the XML files and put the data in the db
     public void loadDbFromXML(String stationId) {
 
@@ -54,6 +73,9 @@ public class DataAccessLayer {
     } // End loadDbFromXML
 
     public Cursor getTideByLocation(String location) {
+
+        // Ensure there is data in the database for this location
+        loadTestData(location);
 
         // Initialize the database
         TideSQLiteHelper helper = new TideSQLiteHelper(context);
