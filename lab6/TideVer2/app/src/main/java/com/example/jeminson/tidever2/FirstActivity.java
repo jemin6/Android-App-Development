@@ -1,44 +1,68 @@
 package com.example.jeminson.tidever2;
 
-import android.app.DatePickerDialog;
+import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+
+public class FirstActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        setContentView(R.layout.first_activity);
+    } // End onCreate
+} // End FirstActivity class
+
+
+
+
+
+
+/*
 import android.content.Intent;
 import android.content.ReceiverCallNotAllowedException;
+import android.database.Cursor;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.icu.util.Calendar;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
+import android.support.v4.widget.SimpleCursorAdapter;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.DatePicker;
 import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.Button;
 import android.view.View;
 import android.view.View.OnClickListener;
 
-public class FirstActivity extends AppCompatActivity implements OnClickListener {
+public class FirstActivity extends AppCompatActivity implements OnClickListener, OnItemSelectedListener {
 
     // For Date Picker
     private static final String TAG = "FirstActivity";
+
+    private DataAccessLayer dal = new DataAccessLayer(this);
+    Cursor cursor = null;
+    String stationSelection = "97420";
+    SimpleCursorAdapter adapter = null;
 
 
     private TextView mDisyplayDate;
     private DatePickerDialog.OnDateSetListener dateSetListener;
 
-    private Button showTideButton;
 
-    //private Spinner locationSpinner;
+    private Spinner locationSpinner;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.first_activity);
 
-        //locationSpinner = (Spinner) findViewById(R.id.locationSpinner);
-        //locationSpinner.setOnItemSelectedListener(this);
+        locationSpinner = (Spinner) findViewById(R.id.locationSpinner);
+        locationSpinner.setOnItemSelectedListener(this);
 
         mDisyplayDate = (TextView) findViewById(R.id.mDisyplayDate);
 
@@ -78,15 +102,7 @@ public class FirstActivity extends AppCompatActivity implements OnClickListener 
 
     } // End onCreate
 
-    @Override
-    public void onClick(View v){
-        if(v.getId() == R.id.showTideButton) {
-            Intent intent = new Intent(FirstActivity.this, SecondActivity.class);
-            startActivity(intent);
-        }
-    } // End onClick
 
-/*
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position,
                                long id) {
@@ -101,13 +117,13 @@ public class FirstActivity extends AppCompatActivity implements OnClickListener 
                 stationSelection = "97439";
                 break;
         }
-        // Get a weather forecast the selected location
-        //cursor = dal.getForcastByLocation(locationSelection);
-        //adapter.changeCursor(cursor);
+        // Get the selected location
+        cursor = dal.getTideByLocation(stationSelection);
+        adapter.changeCursor(cursor);
     }
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
         // TODO Auto-generated method stub
     }
-  */
 } // End FirstActivity
+*/

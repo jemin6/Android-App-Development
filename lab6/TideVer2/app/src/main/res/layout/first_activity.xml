@@ -1,100 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.example.jeminson.tidever2.FirstActivity">
+    android:layout_height="match_parent">
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:orientation="horizontal"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="116dp"
-        android:layout_marginLeft="8dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginRight="8dp"
-        app:layout_constraintRight_toRightOf="parent"
-        android:id="@+id/locationLayout"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp">
+    <fragment
+        android:name="com.example.jeminson.tidever2.FirstFragment"
+        android:id="@+id/first_fragment"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp" />
 
-        <TextView
-            android:id="@+id/spinnerLabel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/spinner_label"
-            android:textColor="@android:color/holo_green_dark"
-            android:textSize="30sp"
-            android:textStyle="bold" />
-
-        <Spinner
-            android:id="@+id/locationSpinner"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_toRightOf="@id/spinnerLabel"
-            android:layout_weight="1"
-            android:entries="@array/locations_array"
-            android:paddingLeft="20sp" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/dateLayout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="8dp"
-        app:layout_constraintTop_toBottomOf="@+id/locationLayout"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/showTideButton"
-        android:layout_marginLeft="8dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginRight="8dp"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
-        app:layout_constraintVertical_bias="0.25">
-
-        <TextView
-            android:id="@+id/dateLabel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Select Date:"
-            android:textColor="@android:color/black"
-            android:textSize="40sp" />
-
-        <TextView
-            android:id="@+id/mDisyplayDate"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:hint="mm/dd/yyyy"
-            android:paddingLeft="30dp"
-            android:text="@string/display_date"
-            android:textColor="@color/colorAccent"
-            android:textSize="40sp" />
-    </LinearLayout>
-
-    <Button
-        android:id="@+id/showTideButton"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginTop="8dp"
-        android:text="@string/show_tide_button"
-        android:textSize="30sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.99"
-        app:layout_constraintHorizontal_bias="0.0"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp" />
-
-</android.support.constraint.ConstraintLayout>
+</LinearLayout>
