@@ -17,6 +17,7 @@ public class TideSQLiteHelper extends SQLiteOpenHelper {
     public static final String DATE = "date";
     public static final String STATION_NAME = "stationname";
     public static final String STATION_ID = "stationid";
+    public static final String TIME = "time";
     public static final String DAY = "day";
     public static final String PRED_IN_FT = "pred_in_ft";
     public static final String HIGH_LOW = "highlow";
@@ -35,6 +36,7 @@ public class TideSQLiteHelper extends SQLiteOpenHelper {
                 + DATE + " TEXT,"
                 + STATION_ID + " INTEGER,"
                 + STATION_NAME + " TEXT,"
+                + TIME + "TEXT,"
                 + DAY + " TEXT,"
                 + PRED_IN_FT + " INTEGER,"
                 + HIGH_LOW + " TEXT,"
