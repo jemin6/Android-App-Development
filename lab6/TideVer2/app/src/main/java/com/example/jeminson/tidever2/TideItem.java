@@ -23,7 +23,7 @@ public class TideItem {
     private SimpleDateFormat dateInFormat = new SimpleDateFormat("yyyy/MM/dd");  // <Date>2017/01/01</Date>
 
     // This is the format we want in our output
-    private SimpleDateFormat dateOutFormat = new SimpleDateFormat("yyyy/MM/dd, EEEE, 'T'h:mm a");
+    private SimpleDateFormat dateOutFormat = new SimpleDateFormat("yyyy/MM/dd, EEEE, 'T'HH:mm a");
 
     public String getTideDateFormatted() {
         try {

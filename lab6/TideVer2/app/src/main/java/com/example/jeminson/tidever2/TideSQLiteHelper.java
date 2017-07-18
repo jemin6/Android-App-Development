@@ -15,8 +15,8 @@ public class TideSQLiteHelper extends SQLiteOpenHelper {
 
     public static final String ITEM = "item";
     public static final String DATE = "date";
+    public static final String ZIP = "zip";
     public static final String STATION_NAME = "stationname";
-    public static final String STATION_ID = "stationid";
     public static final String TIME = "time";
     public static final String DAY = "day";
     public static final String PRED_IN_FT = "pred_in_ft";
@@ -34,7 +34,7 @@ public class TideSQLiteHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         db.execSQL("CREATE TABLE " + ITEM + "( _id INTEGER PRIMARY KEY AUTOINCREMENT,"
                 + DATE + " TEXT,"
-                + STATION_ID + " INTEGER,"
+                + ZIP + " INTEGER,"
                 + STATION_NAME + " TEXT,"
                 + TIME + "TEXT,"
                 + DAY + " TEXT,"
