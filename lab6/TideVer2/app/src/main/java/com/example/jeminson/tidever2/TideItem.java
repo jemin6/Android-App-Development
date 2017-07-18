@@ -51,7 +51,7 @@ public class TideItem {
 
     public void setPredInFt(String pred_in_ft) { this.pred_in_ft = pred_in_ft; }
     public String getPredInFt() { return pred_in_ft; }
-    
+
     public void setHighLow(String highlow) { this.highlow = highlow; }
     public String getHighLow() { return highlow; }
 
