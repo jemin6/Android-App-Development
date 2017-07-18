@@ -25,30 +25,30 @@ public class DataAccessLayer {
 
 
     // This is a temporary method for loading fixed data into the db
-    public void loadTestData(String stationId)
+    public void loadTestData(String zipCode)
     {
         // Initialize database
         TideSQLiteHelper helper = new TideSQLiteHelper(context);
         SQLiteDatabase db = helper.getWritableDatabase();
         // load the database with test data if it isn't already loaded
-        if (db.rawQuery("SELECT * FROM item WHERE " + TideSQLiteHelper.STATION_ID
-                + " = " + stationId, null).getCount() == 0)
+        if (db.rawQuery("SELECT * FROM item WHERE " + TideSQLiteHelper.ZIP
+                + " = " + zipCode, null).getCount() == 0)
         {
-            loadDbFromXML("9432845");	//Coos Bay
-            loadDbFromXML("9434032"); // Florence
-            loadDbFromXML("9435385"); // Newport
+            loadDbFromXML("97420");	//Coos Bay
+            loadDbFromXML("97365"); // Florence
+            loadDbFromXML("97439"); // Newport
         }
         db.close();
     }
 
 
     // Parse the XML files and put the data in the db
-    public void loadDbFromXML(String stationId) {
+    public void loadDbFromXML(String zipCode) {
 
         // Get the data from the XML file
-        String fileName = "station" + stationId + ".xml";
+        String fileName = "tide" + zipCode + ".xml";
         TideItems items = parseXmlFile(fileName);
-        items.setStationName(stationId);
+        items.setStationName(zipCode);
 
         // Initialize database
         TideSQLiteHelper helper = new TideSQLiteHelper(context);
@@ -60,7 +60,7 @@ public class DataAccessLayer {
         for(TideItem item : items) {
 
             cv.put(TideSQLiteHelper.DATE, item.getTideDate());
-            cv.put(TideSQLiteHelper.STATION_ID, items.getStationId());
+            cv.put(TideSQLiteHelper.ZIP, items.getZip());
             cv.put(TideSQLiteHelper.STATION_NAME, items.getStationName());
             cv.put(TideSQLiteHelper.TIME, item.getTime());
             cv.put(TideSQLiteHelper.DAY, item.getDay());
@@ -82,7 +82,7 @@ public class DataAccessLayer {
         SQLiteDatabase db = helper.getReadableDatabase();
 
         // Get tide table for one location
-        String query = "SELECT * FROM item WHERE stationid = ? ORDER BY date ASC";
+        String query = "SELECT * FROM item WHERE zip = ? ORDER BY date ASC";
         String[] variables = new String[]{location};
         return db.rawQuery(query, variables);
     }

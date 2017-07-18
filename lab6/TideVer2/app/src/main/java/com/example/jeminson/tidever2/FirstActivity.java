@@ -12,7 +12,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.DatePicker;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -20,25 +19,26 @@ import android.widget.Button;
 import android.view.View;
 import android.view.View.OnClickListener;
 
-public class FirstActivity extends AppCompatActivity implements OnClickListener, OnItemSelectedListener{
+public class FirstActivity extends AppCompatActivity implements OnClickListener {
 
+    // For Date Picker
     private static final String TAG = "FirstActivity";
-    String stationSelection = "9432845";
+
 
     private TextView mDisyplayDate;
     private DatePickerDialog.OnDateSetListener dateSetListener;
 
     private Button showTideButton;
 
-    private Spinner locationSpinner;
+    //private Spinner locationSpinner;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.first_activity);
 
-        locationSpinner = (Spinner) findViewById(R.id.locationSpinner);
-        locationSpinner.setOnItemSelectedListener(this);
+        //locationSpinner = (Spinner) findViewById(R.id.locationSpinner);
+        //locationSpinner.setOnItemSelectedListener(this);
 
         mDisyplayDate = (TextView) findViewById(R.id.mDisyplayDate);
 
@@ -86,19 +86,19 @@ public class FirstActivity extends AppCompatActivity implements OnClickListener,
         }
     } // End onClick
 
-
+/*
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position,
                                long id) {
         switch (position){
             case 0:
-                stationSelection = "9432845";
+                stationSelection = "97420";
                 break;
             case 1:
-                stationSelection = "9434032";
+                stationSelection = "97365";
                 break;
             case 2:
-                stationSelection = "9435385";
+                stationSelection = "97439";
                 break;
         }
         // Get a weather forecast the selected location
@@ -109,4 +109,5 @@ public class FirstActivity extends AppCompatActivity implements OnClickListener,
     public void onNothingSelected(AdapterView<?> parent) {
         // TODO Auto-generated method stub
     }
+  */
 } // End FirstActivity

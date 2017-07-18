@@ -13,13 +13,13 @@ public class TideItems extends ArrayList<TideItem> {
     private static final long serialVersionUID = 1L;
 
     // Info that applies to the whole tide
-    private String stationid = "";
-    private String stationname = "";
+    private String zip = "";
+    private String stationName = "";
 
-    public String getStationId() { return stationid; }
-    public void setStationId(String stationid) { this.stationid = stationid; }
+    public String getZip() { return zip; }
+    public void setZip(String zip) { this.zip = zip; }
 
-    public String getStationName() { return stationname; }
-    public void setStationName(String stationname) { this.stationname = stationname; }
+    public String getStationName() { return stationName; }
+    public void setStationName(String statioName) { this.stationName = stationName; }
 
 }

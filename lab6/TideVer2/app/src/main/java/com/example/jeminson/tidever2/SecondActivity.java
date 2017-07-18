@@ -15,7 +15,7 @@ public class SecondActivity extends AppCompatActivity {
 
     private DataAccessLayer dal = new DataAccessLayer(this);
     Cursor cursor = null;
-    String stationSelection = "9432845";
+    String stationSelection = "97420";
     SimpleCursorAdapter adapter = null;
 
 
@@ -48,6 +48,5 @@ public class SecondActivity extends AppCompatActivity {
 
         android.widget.ListView itemsListView = (ListView)findViewById(R.id.tideListView);
         itemsListView.setAdapter(adapter);
-        itemsListView.setOnItemClickListener((AdapterView.OnItemClickListener) this);
     }
 }
