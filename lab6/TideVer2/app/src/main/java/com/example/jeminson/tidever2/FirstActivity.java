@@ -3,28 +3,40 @@ package com.example.jeminson.tidever2;
 import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.content.ReceiverCallNotAllowedException;
+import android.database.Cursor;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.icu.util.Calendar;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
+import android.support.v4.widget.SimpleCursorAdapter;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.DatePicker;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Button;
 import android.view.View;
 import android.view.View.OnClickListener;
 
-public class FirstActivity extends AppCompatActivity implements OnClickListener{
+public class FirstActivity extends AppCompatActivity implements OnClickListener, OnItemSelectedListener {
 
     private static final String TAG = "FirstActivity";
+
+    //private DataAccessLayer dal = new DataAccessLayer(this);
+    //Cursor cursor = null;
+    //SimpleCursorAdapter adapter = null;
+    String locationSelection = "97420";
 
     private TextView mDisyplayDate;
     private DatePickerDialog.OnDateSetListener dateSetListener;
 
     private Button showTideButton;
+
+    private Spinner locationSpinner;
 
 
     @Override
@@ -33,6 +45,9 @@ public class FirstActivity extends AppCompatActivity implements OnClickListener{
         setContentView(R.layout.first_activity);
 
         mDisyplayDate = (TextView) findViewById(R.id.mDisyplayDate);
+
+        locationSpinner = (Spinner) findViewById(R.id.locationSpinner);
+        locationSpinner.setOnItemSelectedListener(this);
 
         mDisyplayDate.setOnClickListener(new View.OnClickListener() {
             @RequiresApi(api = Build.VERSION_CODES.N)
@@ -77,4 +92,29 @@ public class FirstActivity extends AppCompatActivity implements OnClickListener{
             startActivity(intent);
         }
     } // End onClick
+
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position,
+                               long id) {
+        switch (position){
+            case 0:
+                locationSelection = "97420";
+                break;
+            case 1:
+                locationSelection = "97365";
+                break;
+            case 2:
+                locationSelection = "97439";
+        }
+        // Get a weather forecast the selected location
+        //cursor = dal.getTideByLocation(locationSelection);
+        //adapter.changeCursor(cursor);
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> parent) {
+        // TODO Auto-generated method stub
+    }
+
+
 } // End FirstActivity
