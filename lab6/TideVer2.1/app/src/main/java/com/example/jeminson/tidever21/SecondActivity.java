@@ -13,8 +13,10 @@ import android.widget.TextView;
  */
 
 public class SecondActivity extends AppCompatActivity {
+
+    private TextView showLocation;
+
     private DataAccessLayer dal = new DataAccessLayer(this);
-    String locationSelection = "97420";
 
     Cursor cursor = null;
 
@@ -24,6 +26,8 @@ public class SecondActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.second_activity);
+
+        showLocation = (TextView) findViewById(R.id.showLocation);
     }
 
     @Override
@@ -58,5 +62,7 @@ public class SecondActivity extends AppCompatActivity {
 
         ListView itemsListView = (ListView)findViewById(R.id.tideListView);
         itemsListView.setAdapter(adapter);
+
+        showLocation.setText(value);
     } // End onResume
 } // End SecondActivity

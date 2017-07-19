@@ -5,6 +5,8 @@
     <string name="location_label_text">Location</string>
     <string name="show_tide_button">Show Tide</string>
     <string name="welcome_text">Welcome!</string>
+    <string name="show_location_text"/>
+    <string name="show_location_label">Selected Location ZIP:</string>
 
     <string-array name="locations_array">
         <item>Coos Bay</item>
