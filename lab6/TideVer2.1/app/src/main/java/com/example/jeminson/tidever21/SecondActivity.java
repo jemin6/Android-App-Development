@@ -43,10 +43,10 @@ public class SecondActivity extends AppCompatActivity {
         String value = intent.getExtras().getString("location");
         String date = intent.getExtras().getString("date");
 
-        // Get Forecast for the default location
+        // Get the default location
         cursor = dal.getTideByLocation(value);
 
-        // Set up the adapter for the ListView to display the forecast
+        // Set up the adapter for the ListView to display
         adapter = new SimpleCursorAdapter(this, R.layout.listview_items, cursor, new String[]{
                 TideSQLiteHelper.DATE,
                 TideSQLiteHelper.DAY,

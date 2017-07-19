@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener, 
         // Get Forecast for the default location
         cursor = dal.getTideByLocation(locationSelection);
 
-        // Set up the adapter for the ListView to display the forecast
+        // Set up the adapter for the ListView to display
         adapter = new SimpleCursorAdapter(this, R.layout.listview_items, cursor, new String[]{
                         TideSQLiteHelper.DATE,
                         TideSQLiteHelper.DAY,
@@ -138,7 +138,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener, 
                 locationSelection = "97365";
                 break;
         }
-        // Get a weather forecast the selected location
+        // Get the selected location
         cursor = dal.getTideByLocation(locationSelection);
         adapter.changeCursor(cursor);
     }

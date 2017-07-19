@@ -12,7 +12,7 @@ public class TideItems extends ArrayList<TideItem> {
     // Default Serial ID
     private static final long serialVersionUID = 1L;
 
-    // Info that applies to the whole forecast
+    // Info that applies
     private String zip = "";
     private String city = "";
 
