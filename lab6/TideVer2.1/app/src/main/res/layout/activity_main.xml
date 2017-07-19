@@ -69,7 +69,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:hint="mm/dd/yyyy"
+            android:hint="yyyy/mm/dd"
             android:text="@string/display_date"
             android:textAlignment="center"
             android:textColor="@color/colorAccent"

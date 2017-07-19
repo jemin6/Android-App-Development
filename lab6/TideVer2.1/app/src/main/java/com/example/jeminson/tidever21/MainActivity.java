@@ -20,10 +20,16 @@ import android.widget.DatePicker;
 import android.widget.Spinner;
 import android.view.View.OnClickListener;
 import android.widget.TextView;
+import java.util.Date;
+
+
+import java.text.SimpleDateFormat;
 
 public class MainActivity extends AppCompatActivity implements OnClickListener, OnItemSelectedListener {
 
     private static final String TAG = "FirstActivity";
+    private SimpleDateFormat dateOutFormat = new SimpleDateFormat("yyyy/MM/dd");
+
 
     // Used for setting location on the MainActivity
     private DataAccessLayer dal = new DataAccessLayer(this);
@@ -38,7 +44,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener, 
     private TextView displayDate;
     private DatePickerDialog.OnDateSetListener dateSetListener;
 
-    String date;
+    String dateString;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -102,14 +108,15 @@ public class MainActivity extends AppCompatActivity implements OnClickListener, 
         dateSetListener = new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePicker datePicker, int year, int month, int day) {
-                month = month + 1;
-                Log.d(TAG, "onDateSet: mm/dd/yyy: " + month + "/" + day + "/" + year);
+                year = year - 1900;
+                Log.d(TAG, "onDateSet: yyyy/MM/dd: " + year + "/" + month + "/" + day);
 
-                date = year + "/" + month + "/" + day;
-                displayDate.setText(date);
+                Date date = new Date(year, month, day);
+                dateString = dateOutFormat.format(date);
+
+                displayDate.setText(dateString);
             }
         };
-
 
     } // End onCreate
 
@@ -119,7 +126,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener, 
         if(v.getId() == R.id.showTideButton) {
             Intent intent = new Intent(MainActivity.this, SecondActivity.class);
             intent.putExtra("location", locationSelection);
-            intent.putExtra("date", date);
+            intent.putExtra("date", dateString);
             startActivity(intent);
         } // End if
     } // End onClick
