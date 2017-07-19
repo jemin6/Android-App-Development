@@ -35,6 +35,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener, 
     private DataAccessLayer dal = new DataAccessLayer(this);
     Cursor cursor = null;
     String locationSelection = "97420";
+    String dateSelection = "2017/01/01";
     SimpleCursorAdapter adapter = null;
 
     // Button that goes to SecondActivity
@@ -58,8 +59,8 @@ public class MainActivity extends AppCompatActivity implements OnClickListener, 
         // Initialize the database
         dal.loadTestData("97420");
 
-        // Get Forecast for the default location
-        cursor = dal.getTideByLocation(locationSelection);
+        // Get the default location
+        cursor = dal.getTideByLocation(locationSelection, dateSelection);
 
         // Set up the adapter for the ListView to display
         adapter = new SimpleCursorAdapter(this, R.layout.listview_items, cursor, new String[]{
@@ -146,7 +147,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener, 
                 break;
         }
         // Get the selected location
-        cursor = dal.getTideByLocation(locationSelection);
+        cursor = dal.getTideByLocation(locationSelection, dateSelection);
         adapter.changeCursor(cursor);
     }
 

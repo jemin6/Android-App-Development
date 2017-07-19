@@ -23,6 +23,7 @@ public class DataAccessLayer {
 
     public DataAccessLayer(Context context) { this.context = context; }
 
+
     // This is a temporary method for loading fixed data into the db
     public void loadTestData(String zipCode)
     {
@@ -72,17 +73,19 @@ public class DataAccessLayer {
 
     } // End loadDbFromXML
 
-    public Cursor getTideByLocation(String location) {
+    // Works for location and date
+    public Cursor getTideByLocation(String location, String date) {
 
         // Initialize the database
         TideSQLiteHelper helper = new TideSQLiteHelper(context);
         SQLiteDatabase db = helper.getReadableDatabase();
 
         // Get tide table for one location
-        String query = "SELECT * FROM item WHERE Zip = ? ORDER BY date ASC";
-        String[] variables = new String[]{location};
+        String query = "SELECT * FROM item WHERE Zip = ? AND Date = ? ORDER BY date ASC";
+        String[] variables = new String[]{location, date};
         return db.rawQuery(query, variables);
     }
+
 
     public TideItems parseXmlFile(String fileName){
         try{

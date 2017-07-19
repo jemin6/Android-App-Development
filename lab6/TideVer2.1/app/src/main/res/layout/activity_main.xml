@@ -50,7 +50,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_marginTop="40dp"
         android:layout_below="@+id/locationLayout"
         android:layout_centerHorizontal="true">
 
@@ -66,7 +65,7 @@
 
         <TextView
             android:id="@+id/displayDate"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:hint="yyyy/mm/dd"
@@ -74,6 +73,16 @@
             android:textAlignment="center"
             android:textColor="@color/colorAccent"
             android:textSize="40sp"/>
+
+        <TextView
+            android:id="@+id/messageText1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/message_text_1"
+            android:textAlignment="center"
+            android:textColor="@android:color/holo_red_light"
+            android:textStyle="bold"/>
 
     </LinearLayout>
 

@@ -44,7 +44,7 @@ public class SecondActivity extends AppCompatActivity {
         String date = intent.getExtras().getString("date");
 
         // Get the default location
-        cursor = dal.getTideByLocation(value);
+        cursor = dal.getTideByLocation(value, date);
 
         // Set up the adapter for the ListView to display
         adapter = new SimpleCursorAdapter(this, R.layout.listview_items, cursor, new String[]{

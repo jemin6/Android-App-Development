@@ -6,10 +6,6 @@ package com.example.jeminson.tidever21;
 
 import android.annotation.SuppressLint;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
 @SuppressLint("SimpleDateFormat")
 public class TideItem {
 
@@ -20,25 +16,6 @@ public class TideItem {
     private String predInCm	 = null;
     private String highLow = null;
 
-    /*
-    // This is the format used in XML file
-    private SimpleDateFormat dateInFormat = new SimpleDateFormat("yyyy/MM/dd");  // <Date>2014/06/28</Date>
-
-    // This is the format we want in our output
-    private SimpleDateFormat dateOutFormat = new SimpleDateFormat("yyyy/MM/dd");
-
-
-    public String getTideDateFormatted() {
-        try {
-            Date date = dateInFormat.parse(tideDate.trim());
-            String tideDateFormatted = dateOutFormat.format(date);
-            return tideDateFormatted;
-        }
-        catch (ParseException e) {
-            throw new RuntimeException(e);
-        }
-    }
-    */
 
     public void setTideDate(String tideDate) {
         this.tideDate = tideDate;
