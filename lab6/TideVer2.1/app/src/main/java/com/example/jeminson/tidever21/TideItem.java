@@ -20,6 +20,7 @@ public class TideItem {
     private String predInCm	 = null;
     private String highLow = null;
 
+    /*
     // This is the format used in the weather XML file
     private SimpleDateFormat dateInFormat = new SimpleDateFormat("yyyy/MM/dd");  // <Date>2014/06/28</Date>
 
@@ -37,6 +38,7 @@ public class TideItem {
             throw new RuntimeException(e);
         }
     }
+    */
 
     public void setTideDate(String tideDate) {
         this.tideDate = tideDate;

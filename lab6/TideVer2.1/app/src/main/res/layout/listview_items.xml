@@ -4,45 +4,170 @@
               android:layout_height="match_parent"
               android:orientation="vertical" >
 
-    <TextView
-        android:id="@+id/dateTextView"
-        android:layout_width="match_parent"
+    <LinearLayout
+        android:id="@+id/dateTextLayout"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_weight="1" />
-    <TextView
-        android:id="@+id/dayTextView"
-        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/dateTextLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.40"
+            android:text="@string/date_text_label"
+            android:textSize="20sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/dateTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.32"
+            android:textSize="20sp"
+            android:textStyle="italic"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/dayTextLayout"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_weight="1" />
-    <TextView
-        android:id="@+id/timeTextView"
-        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/dayTextLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/day_text_label"
+            android:textSize="20sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/dayTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textStyle="italic"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/timeTextLayout"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_weight="1" />
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/timeTextLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/time_text_label"
+            android:textSize="20sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/timeTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textStyle="italic"/>
+    </LinearLayout>
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1" >
-        <TextView
-            android:id="@+id/predInFtView"
+
+        <LinearLayout
+            android:id="@+id/predInFtLayout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Ft: " />
+            android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/predInCmView"
+            <TextView
+                android:id="@+id/predInFtLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/pred_in_ft_label"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/predInFtView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingLeft="10dp"
+                android:text=""
+                android:textStyle="italic"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/predInCmLayout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Cm: "
-            android:layout_toRightOf="@id/predInFtView" />
+            android:orientation="horizontal"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/predInFtLayout"
+            android:layout_toEndOf="@+id/predInFtLayout"
+            android:layout_marginLeft="26dp"
+            android:layout_marginStart="26dp">
 
-        <TextView
-            android:id="@+id/highLowView"
+            <TextView
+                android:id="@+id/predInCmLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/pred_in_cm_label"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/predInCmView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/predInFtView"
+                android:layout_weight="1"
+                android:paddingLeft="10dp"
+                android:text=""
+                android:textStyle="italic"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/highLowLayout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@id/predInCmView"
-            android:text="High Low: " />
- />
+            android:orientation="horizontal"
+            android:layout_marginLeft="30dp"
+            android:layout_marginStart="30dp"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/predInCmLayout"
+            android:layout_toEndOf="@+id/predInCmLayout">
 
+            <TextView
+                android:id="@+id/highLowLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/high_low_label"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/highLowView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/predInCmView"
+                android:layout_weight="1"
+                android:paddingLeft="10dp"
+                android:text=""
+                android:textStyle="italic"/>
+        </LinearLayout><![CDATA[
+
+        />
+
+    ]]>
     </RelativeLayout>
 </LinearLayout>

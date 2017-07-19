@@ -6,7 +6,13 @@
     <string name="show_tide_button">Show Tide</string>
     <string name="welcome_text">Welcome!</string>
     <string name="show_location_text"/>
-    <string name="show_location_label">Selected Location ZIP:</string>
+    <string name="show_location_label">Location ZIP : </string>
+    <string name="date_text_label">Date : </string>
+    <string name="day_text_label">Day : </string>
+    <string name="time_text_label">Time : </string>
+    <string name="pred_in_ft_label">Ft : </string>
+    <string name="pred_in_cm_label">Cm : </string>
+    <string name="high_low_label">H/L : </string>
 
     <string-array name="locations_array">
         <item>Coos Bay</item>
