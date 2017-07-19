@@ -18,13 +18,13 @@
         android:layout_toRightOf="@id/locationLabel"
         android:entries="@array/locations_array" />
 
-    <ListView
-        android:id="@+id/tideListView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@id/locationSpinner" >
-
-    </ListView>
+    <Button
+        android:id="@+id/showTideButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:text="Show Tide"/>
 
 </RelativeLayout>

@@ -1,22 +1,26 @@
 package com.example.jeminson.tidever21;
 
-import android.app.Activity;
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.support.v4.widget.SimpleCursorAdapter;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
-import android.widget.ListView;
+import android.widget.Button;
 import android.widget.Spinner;
+import android.view.View.OnClickListener;
 
 
-public class MainActivity extends Activity implements OnItemSelectedListener {
+public class MainActivity extends AppCompatActivity implements OnClickListener, OnItemSelectedListener {
 
     private DataAccessLayer dal = new DataAccessLayer(this);
     Cursor cursor = null;
     String locationSelection = "97420";
     SimpleCursorAdapter adapter = null;
+
+    private Button showTideButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,11 +38,7 @@ public class MainActivity extends Activity implements OnItemSelectedListener {
         cursor = dal.getTideByLocation(locationSelection);
 
         // Set up the adapter for the ListView to display the forecast
-        adapter = new SimpleCursorAdapter(
-                this,
-                R.layout.listview_items,
-                cursor,
-                new String[]{
+        adapter = new SimpleCursorAdapter(this, R.layout.listview_items, cursor, new String[]{
                         TideSQLiteHelper.DATE,
                         TideSQLiteHelper.DAY,
                         TideSQLiteHelper.TIME,
@@ -56,9 +56,17 @@ public class MainActivity extends Activity implements OnItemSelectedListener {
                 },
                 0 );	// no flags
 
-        ListView itemsListView = (ListView)findViewById(R.id.tideListView);
-        itemsListView.setAdapter(adapter);
+        showTideButton = (Button) findViewById(R.id.showTideButton);
+        showTideButton.setOnClickListener(this);
     }
+
+    @Override
+    public void onClick(View v){
+        if(v.getId() == R.id.showTideButton) {
+            Intent intent = new Intent(MainActivity.this, SecondActivity.class);
+            startActivity(intent);
+        }
+    } // End onClick
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position,

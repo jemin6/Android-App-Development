@@ -58,7 +58,7 @@ public class DataAccessLayer {
 
         for(TideItem item : items) {
 
-            cv.put(TideSQLiteHelper.DATE, item.getTideDateFormatted());
+            cv.put(TideSQLiteHelper.DATE, item.getTideDate());
             cv.put(TideSQLiteHelper.ZIP, items.getZip());
             cv.put(TideSQLiteHelper.CITY, items.getCity());
             cv.put(TideSQLiteHelper.DAY, item.getTideDay());
