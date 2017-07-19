@@ -33,12 +33,10 @@ public class SecondActivity extends AppCompatActivity {
 
         // Get data from the MainActivity
         Intent intent = getIntent();
-
-        // Initialize the database
-        //dal.loadTestData("97420");
+        String value = intent.getExtras().getString("test");
 
         // Get Forecast for the default location
-        cursor = dal.getTideByLocation(locationSelection);
+        cursor = dal.getTideByLocation(value);
 
 
         // Set up the adapter for the ListView to display the forecast

@@ -64,6 +64,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener, 
     public void onClick(View v){
         if(v.getId() == R.id.showTideButton) {
             Intent intent = new Intent(MainActivity.this, SecondActivity.class);
+            intent.putExtra("test", locationSelection);
             startActivity(intent);
         }
     } // End onClick
