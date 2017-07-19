@@ -2,6 +2,8 @@
 ## 2017 Summer
 ### CIS399 Android App Development 
 
+> [Koean version](https://github.com/jemin6/CIS399-Android-App-Development/blob/master/README.ko.md)
+
 * lab 1 : Counting App 
 	* Simple app that counts the click.  
 
