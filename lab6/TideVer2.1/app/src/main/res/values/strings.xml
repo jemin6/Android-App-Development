@@ -13,6 +13,10 @@
     <string name="pred_in_ft_label">Ft : </string>
     <string name="pred_in_cm_label">Cm : </string>
     <string name="high_low_label">H/L : </string>
+    <string name="date_label">Select Date</string>
+    <string name="display_date"></string>
+    <string name="show_date_label">Date:</string>
+    <string name="show_date"/>
 
     <string-array name="locations_array">
         <item>Coos Bay</item>

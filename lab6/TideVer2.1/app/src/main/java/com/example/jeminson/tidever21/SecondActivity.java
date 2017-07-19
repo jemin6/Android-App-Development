@@ -8,6 +8,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import org.w3c.dom.Text;
+
 /**
  * Created by jeminson on 2017. 7. 18..
  */
@@ -15,6 +17,7 @@ import android.widget.TextView;
 public class SecondActivity extends AppCompatActivity {
 
     private TextView showLocation;
+    private TextView showDate;
 
     private DataAccessLayer dal = new DataAccessLayer(this);
 
@@ -28,6 +31,7 @@ public class SecondActivity extends AppCompatActivity {
         setContentView(R.layout.second_activity);
 
         showLocation = (TextView) findViewById(R.id.showLocation);
+        showDate = (TextView) findViewById(R.id.showDate);
     }
 
     @Override
@@ -36,7 +40,8 @@ public class SecondActivity extends AppCompatActivity {
 
         // Get data from the MainActivity
         Intent intent = getIntent();
-        String value = intent.getExtras().getString("test");
+        String value = intent.getExtras().getString("location");
+        String date = intent.getExtras().getString("date");
 
         // Get Forecast for the default location
         cursor = dal.getTideByLocation(value);
@@ -64,5 +69,6 @@ public class SecondActivity extends AppCompatActivity {
         itemsListView.setAdapter(adapter);
 
         showLocation.setText(value);
+        showDate.setText(date);
     } // End onResume
 } // End SecondActivity

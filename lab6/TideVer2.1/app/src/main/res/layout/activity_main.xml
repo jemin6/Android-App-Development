@@ -45,6 +45,38 @@
 
     </LinearLayout>
 
+    <LinearLayout
+        android:id="@+id/dateLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="40dp"
+        android:layout_below="@+id/locationLayout"
+        android:layout_centerHorizontal="true">
+
+        <TextView
+            android:id="@+id/dateLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/date_label"
+            android:textAlignment="center"
+            android:textColor="@android:color/black"
+            android:textSize="40sp"/>
+
+        <TextView
+            android:id="@+id/displayDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="mm/dd/yyyy"
+            android:text="@string/display_date"
+            android:textAlignment="center"
+            android:textColor="@color/colorAccent"
+            android:textSize="40sp"/>
+
+    </LinearLayout>
+
     <Button
         android:id="@+id/showTideButton"
         android:layout_width="match_parent"
