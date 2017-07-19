@@ -4,7 +4,7 @@
 
 > [Koean version](https://github.com/jemin6/CIS399-Android-App-Development/blob/master/README.ko.md)
 ----------------------------------------------------------------------
-* lab 1 : Counting App 
+* [lab 1](https://github.com/jemin6/CIS399-Android-App-Development/tree/master/lab1) : Counting App 
 	* Simple app that counts the click.  
 
 * lab 2 : Pig Game Ver 1 
