@@ -10,16 +10,17 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class TideSQLiteHelper extends SQLiteOpenHelper {
 
-    private static final String DATEBASE_NAME = "";
+    private static final String DATEBASE_NAME = "tide.sqlite";
     private static final int DATEBASE_VERSION = 1;
 
     public static final String ITEM = "item";
     public static final String DATE = "date";
-    public static final String ZIP = "zip";
-    public static final String STATION_NAME = "stationname";
-    public static final String TIME = "time";
+    public static final String ZIP = "Zip";
+    public static final String CITY = "City";
     public static final String DAY = "day";
+    public static final String TIME = "time";
     public static final String PRED_IN_FT = "pred_in_ft";
+    public static final String PRED_IN_CM = "pred_in_cm";
     public static final String HIGH_LOW = "highlow";
 
 
@@ -35,10 +36,11 @@ public class TideSQLiteHelper extends SQLiteOpenHelper {
         db.execSQL("CREATE TABLE " + ITEM + "( _id INTEGER PRIMARY KEY AUTOINCREMENT,"
                 + DATE + " TEXT,"
                 + ZIP + " INTEGER,"
-                + STATION_NAME + " TEXT,"
-                + TIME + "TEXT,"
+                + CITY + " TEXT,"
                 + DAY + " TEXT,"
+                + TIME + " TEXT,"
                 + PRED_IN_FT + " INTEGER,"
+                + PRED_IN_CM + " INTEGER,"
                 + HIGH_LOW + " TEXT,"
                 + ")" );
     }

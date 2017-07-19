@@ -14,12 +14,12 @@ public class TideItems extends ArrayList<TideItem> {
 
     // Info that applies to the whole tide
     private String zip = "";
-    private String stationname = "";
+    private String city = "";
 
     public String getZip() { return zip; }
     public void setZip(String zip) { this.zip = zip; }
 
-    public String getStationName() { return stationname; }
-    public void setStationName(String stationname) { this.stationname = stationname; }
+    public String getCity() { return city; }
+    public void setCity(String city) { this.city = city; }
 
 }

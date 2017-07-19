@@ -57,13 +57,13 @@ public class DataAccessLayer {
         ContentValues cv = new ContentValues();
 
         for(TideItem item : items) {
-
-            cv.put(TideSQLiteHelper.DATE, item.getTideDate());
+            cv.put(TideSQLiteHelper.DATE, item.getTideDateFormatted());
             cv.put(TideSQLiteHelper.ZIP, items.getZip());
-            cv.put(TideSQLiteHelper.STATION_NAME, items.getStationName());
-            cv.put(TideSQLiteHelper.TIME, item.getTime());
-            cv.put(TideSQLiteHelper.DAY, item.getDay());
+            cv.put(TideSQLiteHelper.CITY, items.getCity());
+            cv.put(TideSQLiteHelper.DAY, item.getTideDay());
+            cv.put(TideSQLiteHelper.TIME, item.getTideTime());
             cv.put(TideSQLiteHelper.PRED_IN_FT, item.getPredInFt());
+            cv.put(TideSQLiteHelper.PRED_IN_CM, item.getPredInCm());
             cv.put(TideSQLiteHelper.HIGH_LOW, item.getHighLow());
             db.insert(TideSQLiteHelper.ITEM, null, cv);
         }  // End for loop
@@ -78,7 +78,7 @@ public class DataAccessLayer {
         SQLiteDatabase db = helper.getReadableDatabase();
 
         // Get tide table for one location
-        String query = "SELECT * FROM item WHERE zip = ? ORDER BY date ASC";
+        String query = "SELECT * FROM item WHERE Zip = ? ORDER BY date ASC";
         String[] variables = new String[]{location};
         return db.rawQuery(query, variables);
     }

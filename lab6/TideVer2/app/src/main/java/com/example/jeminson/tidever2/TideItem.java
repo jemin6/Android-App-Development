@@ -14,16 +14,17 @@ import java.util.Date;
 public class TideItem {
 
     private String tideDate = null;
-    private String day = null;
-    private String time = null;
-    private String pred_in_ft = null;
-    private String highlow = null;
+    private String tideDay = null;
+    private String tideTime = null;
+    private String predInFt = null;
+    private String predInCm	 = null;
+    private String highLow = null;
 
     // This is the format used in the XML file
     private SimpleDateFormat dateInFormat = new SimpleDateFormat("yyyy/MM/dd");  // <Date>2017/01/01</Date>
 
     // This is the format we want in our output
-    private SimpleDateFormat dateOutFormat = new SimpleDateFormat("yyyy/MM/dd, EEEE, 'T'HH:mm a");
+    private SimpleDateFormat dateOutFormat = new SimpleDateFormat("yyyy/MM/dd");
 
     public String getTideDateFormatted() {
         try {
@@ -36,23 +37,44 @@ public class TideItem {
         }
     }
 
-    public void setTideDate(String pubDate) {
-        this.tideDate = pubDate;
+    public void setTideDate(String tideDate) {
+        this.tideDate = tideDate;
     }
     public String getTideDate() {
         return tideDate;
     }
 
-    public void setDay(String day) { this.day = day;}
-    public String getDay() { return day; }
+    public void setTideDay(String tideDay) {
+        this.tideDay = tideDay;
+    }
+    public String getTideDay() {
+        return tideDay;
+    }
 
-    public void setTime(String time) { this.time = time;}
-    public String getTime() { return time; }
+    public void setTideTime(String tideTime) {
+        this.tideTime = tideTime;
+    }
+    public String getTideTime() {
+        return tideTime;
+    }
 
-    public void setPredInFt(String pred_in_ft) { this.pred_in_ft = pred_in_ft; }
-    public String getPredInFt() { return pred_in_ft; }
+    public void setPredInFt(String predInFt) {
+        this.predInFt = predInFt;
+    }
+    public String getPredInFt() {
+        return predInFt;
+    }
 
-    public void setHighLow(String highlow) { this.highlow = highlow; }
-    public String getHighLow() { return highlow; }
+    public void setPredInCm(String predInCm) {
+        this.predInCm = predInCm;
+    }
+    public String getPredInCm() {
+        return predInCm;
+    }
+
+    public void setHighLow(String highLow) { this.highLow = highLow; }
+    public String getHighLow() {
+        return highLow;
+    }
 
 }

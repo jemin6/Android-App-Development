@@ -24,31 +24,39 @@ import android.widget.Button;
 import android.view.View;
 import android.view.View.OnClickListener;
 
-public class FirstActivity extends AppCompatActivity implements OnClickListener {
+public class FirstActivity extends AppCompatActivity implements OnItemSelectedListener{
 
     private static final String TAG = "FirstActivity";
 
-    /*
-    String locationSelection = "97420";
     private DataAccessLayer dal = new DataAccessLayer(this);
-    */
     Cursor cursor = null;
+    String locationSelection = "97420";
     SimpleCursorAdapter adapter = null;
 
-
+    /*
     private TextView mDisyplayDate;
     private DatePickerDialog.OnDateSetListener dateSetListener;
 
     private Button showTideButton;
-
-    //private Spinner locationSpinner;
-
+    */
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.first_activity);
 
+        // Set up location selection spinner
+        Spinner locationSpinner = (Spinner)findViewById(R.id.locationSpinner);
+        locationSpinner.setOnItemSelectedListener(this);
+
+        // Initialize the database
+        dal.loadTestData("97420");
+
+        // Get Forecast for the default location
+        cursor = dal.getTideByLocation(locationSelection);
+
+
+        /*
         mDisyplayDate = (TextView) findViewById(R.id.mDisyplayDate);
 
         mDisyplayDate.setOnClickListener(new View.OnClickListener() {
@@ -83,13 +91,14 @@ public class FirstActivity extends AppCompatActivity implements OnClickListener 
 
         showTideButton = (Button) findViewById(R.id.showTideButton);
         showTideButton.setOnClickListener(this);
+        */
 
-        /*
+
         locationSpinner = (Spinner) findViewById(R.id.locationSpinner);
         locationSpinner.setOnItemSelectedListener(this);
 
         cursor = dal.getTideByLocation(locationSelection);
-        */
+
 /*
         // Set up the adapter for the ListView to display the forecast
         adapter = new SimpleCursorAdapter(this, R.layout.listview_items, cursor,
@@ -112,6 +121,7 @@ public class FirstActivity extends AppCompatActivity implements OnClickListener 
 */
     } // End onCreate
 
+    /*
     @Override
     public void onClick(View v){
         if(v.getId() == R.id.showTideButton) {
@@ -119,20 +129,22 @@ public class FirstActivity extends AppCompatActivity implements OnClickListener 
             startActivity(intent);
         }
     } // End onClick
-/*
+    */
+
     @Override
-    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+    public void onItemSelected(AdapterView<?> parent, View view, int position,
+                               long id) {
         switch (position){
             case 0:
                 locationSelection = "97420";
                 break;
             case 1:
-                locationSelection = "97365";
+                locationSelection = "97439";
                 break;
             case 2:
-                locationSelection = "97439";
+                locationSelection = "97365";
         }
-        // Get the selected location
+        // Get a weather forecast the selected location
         cursor = dal.getTideByLocation(locationSelection);
         adapter.changeCursor(cursor);
     }
@@ -141,5 +153,4 @@ public class FirstActivity extends AppCompatActivity implements OnClickListener 
     public void onNothingSelected(AdapterView<?> parent) {
         // TODO Auto-generated method stub
     }
-*/
 } // End FirstActivity
