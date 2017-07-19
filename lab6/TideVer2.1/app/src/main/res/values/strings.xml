@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">TideVer2.1</string>
+
+    <string-array name="locations_array">
+        <item>Coos Bay</item>
+        <item>Florence</item>
+        <item>Newport</item>
+    </string-array>
+</resources>
