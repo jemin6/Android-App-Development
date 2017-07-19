@@ -2,6 +2,10 @@
     <string name="app_name">TideVer2.1</string>
     <string name="second_activity_name">Tide Table</string>
 
+    <string name="location_label_text">Location</string>
+    <string name="show_tide_button">Show Tide</string>
+    <string name="welcome_text">Welcome!</string>
+
     <string-array name="locations_array">
         <item>Coos Bay</item>
         <item>Florence</item>

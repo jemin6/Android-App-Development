@@ -5,26 +5,57 @@
                 tools:context="${relativePackage}.${activityClass}" >
 
     <TextView
-        android:id="@+id/locationLabel"
-        android:layout_width="wrap_content"
+        android:id="@+id/welcomeText"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Choose_location"
-        android:textSize="20sp" />
+        android:text="@string/welcome_text"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="100sp"
+        android:textStyle="bold"/>
 
-    <Spinner
-        android:id="@+id/locationSpinner"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:id="@+id/locationLayout"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@id/locationLabel"
-        android:entries="@array/locations_array" />
+        android:orientation="horizontal"
+        android:layout_marginTop="146dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <TextView
+            android:id="@+id/locationLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/location_label_text"
+            android:textAllCaps="true"
+            android:textColor="@android:color/holo_green_dark"
+            android:textSize="40sp"
+            android:textStyle="bold"/>
+
+        <Spinner
+            android:id="@+id/locationSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_toRightOf="@id/locationLabel"
+            android:layout_weight="1"
+            android:entries="@array/locations_array"/>
+
+    </LinearLayout>
 
     <Button
         android:id="@+id/showTideButton"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true"
-        android:text="Show Tide"/>
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="11dp"
+        android:text="@string/show_tide_button"
+        android:textColor="@android:color/black"
+        android:textSize="40sp"
+        android:textStyle="bold"/>
 
 </RelativeLayout>

@@ -20,7 +20,6 @@ public class SecondActivity extends AppCompatActivity {
 
     SimpleCursorAdapter adapter = null;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,7 +36,6 @@ public class SecondActivity extends AppCompatActivity {
 
         // Get Forecast for the default location
         cursor = dal.getTideByLocation(value);
-
 
         // Set up the adapter for the ListView to display the forecast
         adapter = new SimpleCursorAdapter(this, R.layout.listview_items, cursor, new String[]{
@@ -60,6 +58,5 @@ public class SecondActivity extends AppCompatActivity {
 
         ListView itemsListView = (ListView)findViewById(R.id.tideListView);
         itemsListView.setAdapter(adapter);
-
-    }
-}
+    } // End onResume
+} // End SecondActivity
