@@ -3,7 +3,7 @@
 ### CIS399 Android App Development 
 
 > [Koean version](https://github.com/jemin6/CIS399-Android-App-Development/blob/master/README.ko.md)
-
+----------------------------------------------------------------------
 * lab 1 : Counting App 
 	* Simple app that counts the click.  
 
@@ -21,3 +21,6 @@
 	
 * lab 6 : Tide Table Ver 2 
 	* Using two activities. Select location & date from the first activity, and display date/day/time/height/high or low on the second activity. 
+
+* lab 7 : Tide Table Ver 3
+	* Tide predictions will be pulled from a NOAA CO-OPS Web Service.
