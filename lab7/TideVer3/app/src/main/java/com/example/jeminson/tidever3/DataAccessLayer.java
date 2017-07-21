@@ -29,7 +29,18 @@ public class DataAccessLayer {
 
     public DataAccessLayer(Context context) { this.context = context; }
 
+    // Works for location and date
+    public Cursor getTideByFromDb(String location, String date) {
 
+        // Initialize the database
+        TideSQLiteHelper helper = new TideSQLiteHelper(context);
+        SQLiteDatabase db = helper.getReadableDatabase();
+
+        // Get tide table for one location
+        String query = "SELECT * FROM item WHERE Zip = ? AND Date = ? ORDER BY date ASC";
+        String[] variables = new String[]{location, date};
+        return db.rawQuery(query, variables);
+    }
 
 
 

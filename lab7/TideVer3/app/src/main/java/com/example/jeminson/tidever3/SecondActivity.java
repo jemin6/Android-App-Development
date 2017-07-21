@@ -14,7 +14,7 @@ import android.widget.TextView;
 public class SecondActivity extends AppCompatActivity {
 
     private TextView showLocation;
-    //private TextView showDate;
+    private TextView showDate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,7 +22,7 @@ public class SecondActivity extends AppCompatActivity {
         setContentView(R.layout.second_activity);
 
         showLocation = (TextView) findViewById(R.id.showLocation);
-        //showDate = (TextView) findViewById(R.id.showDate);
+        showDate = (TextView) findViewById(R.id.showDate);
     } // End onCreate
 
     @Override
@@ -32,10 +32,10 @@ public class SecondActivity extends AppCompatActivity {
         // Get data from the MainActivity
         Intent intent = getIntent();
         String value = intent.getExtras().getString("location");
-        //String date = intent.getExtras().getString("date");
+        String date = intent.getExtras().getString("date");
 
         showLocation.setText(value);
-        //showDate.setText(date);
+        showDate.setText(date);
     }
 
 } // End SecondActivity
