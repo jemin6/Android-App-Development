@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">TicTacToe</string>
+
+    <!-- FirstActivity -->
+    <string name="first_activity_title">Rock Scissor Paper</string>
+
+    <!-- SecondActivity -->
+    <string name="second_activity_title">Tic Tac Toe</string>
+
+    <!-- SettingsActivity -->
+    <string name="setting_menu_title">Setting</string>
+
+    <!-- AboutActivity -->
+    <string name="about_menu_title">About</string>
+
+    <!-- menu.xml -->
+    <string name="menu_settings">Settings</string>
+    <string name="menu_about">About</string>
+
+</resources>

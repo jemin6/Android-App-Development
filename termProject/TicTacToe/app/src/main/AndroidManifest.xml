@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.example.jeminson.tictactoe"
+    android:versionCode="1"
+    android:versionName="1">
+
+    <application
+        android:icon="@drawable/ttt"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme"
+        android:allowBackup="true" >
+
+        <activity
+            android:name=".FirstActivity"
+            android:label="@string/first_activity_title">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".SecondActivity"
+            android:label="@string/second_activity_title"
+            android:parentActivityName=".FirstActivity" >
+        </activity>
+
+        <activity
+            android:name=".SettingsActivity"
+            android:label="@string/setting_menu_title" >
+        </activity>
+
+        <activity
+            android:name=".AboutActivity"
+            android:label="@string/about_menu_title" >
+        </activity>
+
+    </application>
+
+</manifest>
