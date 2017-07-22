@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -13,14 +14,13 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import java.util.HashMap;
 
 
 /**
@@ -76,10 +76,9 @@ public class FirstFragment extends Fragment implements OnClickListener {
 
         goToButton = (Button) view.findViewById(R.id.goToButton);
         goToButton.setOnClickListener(this);
-        //goToButton.setEnabled(false);
-
 
         rpsImage = (ImageView) view.findViewById(R.id.rpsImage);
+
 
         return view;
     } // End onCreateView
@@ -92,13 +91,23 @@ public class FirstFragment extends Fragment implements OnClickListener {
                 goToPlay();
                 break;
             case R.id.rpsPlayButton:
-                playGame();
-                rpsPlayButton.setEnabled(false);
-                goToButton.setEnabled(true);
+                String check_text = rpsChoiceText.getText().toString().trim();
+                if(check_text.isEmpty() || check_text.length() == 0 || check_text.equals("")){
+                    Toast.makeText(getActivity(), "You did not enter rock, paper, or scissor", Toast.LENGTH_SHORT).show();
+                    //rpsPlayButton.setEnabled(false);
+                    computerChoiceText.setText("");
+                    winnerText.setText("");
+                    goToButton.setEnabled(false);
+                } else {
+                    playGame();
+                    rpsPlayButton.setEnabled(false);
+                    goToButton.setEnabled(true);
+                }
                 break;
         }
 
     } // End onClick
+
 
     private void goToPlay() {
         Intent intent = new Intent(getActivity(), SecondActivity.class);
