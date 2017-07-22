@@ -4,6 +4,10 @@
     <!-- FirstActivity -->
     <string name="first_activity_title">Rock Scissor Paper</string>
 
+    <!--first_fragment.xml -->
+    <string name="rps_play_button">Play</string>
+
+
     <!-- SecondActivity -->
     <string name="second_activity_title">Tic Tac Toe</string>
 
@@ -16,5 +20,7 @@
     <!-- menu.xml -->
     <string name="menu_settings">Settings</string>
     <string name="menu_about">About</string>
+
+
 
 </resources>

@@ -7,9 +7,4 @@
     android:layout_height="match_parent"
     tools:context=".SecondFragment">
 
-
-
-
-
-
 </android.support.constraint.ConstraintLayout>
