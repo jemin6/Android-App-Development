@@ -34,7 +34,28 @@
             android:id="@+id/aboutMenuP1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:paddingTop="10sp"
             android:text="@string/about_menu_p1"
+            android:textAlignment="center"
+            android:textColor="#635e5c"
+            android:textSize="20sp"/>
+
+        <TextView
+            android:id="@+id/aboutMenuP2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="10sp"
+            android:text="@string/about_menu_p2"
+            android:textAlignment="center"
+            android:textColor="#635e5c"
+            android:textSize="20sp"/>
+
+        <TextView
+            android:id="@+id/aboutMenuP3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="10sp"
+            android:text="@string/about_menu_p3"
             android:textAlignment="center"
             android:textColor="#635e5c"
             android:textSize="20sp"/>

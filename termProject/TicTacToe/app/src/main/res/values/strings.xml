@@ -18,6 +18,9 @@
     <!-- about_activity -->
     <string name="about_menu_head">* Welcome *</string>
     <string name="about_menu_p1">1) Set player name on Setting menu</string>
+    <string name="about_menu_p2">2) Enter rock, paper, or scissor to decide who will go first</string>
+    <string name="about_menu_p3">3) Then, press [GO TO TIC TAC TOC] button</string>
+
 
     <!-- menu.xml -->
     <string name="menu_settings">Settings</string>
