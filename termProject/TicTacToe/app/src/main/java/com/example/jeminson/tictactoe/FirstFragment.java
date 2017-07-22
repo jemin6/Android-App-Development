@@ -135,7 +135,20 @@ public class FirstFragment extends Fragment implements OnClickListener {
     }
 
     private void displayImage(RockPaperScissors rps) {
+        int id = 0;
 
+        switch (rps) {
+            case rock:
+                id = R.drawable.rock;
+                break;
+            case paper:
+                id = R.drawable.paper;
+                break;
+            case scissors:
+                id = R.drawable.scissors;
+                break;
+        }
+        rpsImage.setImageResource(id);
     }
 
 
