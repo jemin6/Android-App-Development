@@ -8,9 +8,10 @@
     <string name="about_menu_title">About</string>
 
     <!--first_fragment.xml -->
-    <string name="rps_play_button">Play</string>
+    <string name="go_to_button">Go to Tic Tac Toe</string>
     <string name="rps_choice_text">Enter rock, paper, or scissors</string>
     <string name="compuer_choice_text_label">Compuer choice: </string>
+    <string name="rps_play_button">Play</string>
 
     <!-- about_activity -->
     <string name="about_menu_head">* Welcome *</string>

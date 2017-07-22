@@ -4,6 +4,7 @@ import android.app.Fragment;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.view.LayoutInflater;
@@ -20,7 +21,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import org.w3c.dom.Text;
+import java.util.HashMap;
 
 
 /**
@@ -34,13 +35,18 @@ public class FirstFragment extends Fragment implements OnClickListener {
     private TextView computerChoiceText;
     private EditText rpsChoiceText;
     private ImageView rpsImage;
-    private Button rpsPlayButton;           // This button
+    private Button rpsPlayButton;
+    private Button goToButton;           // This button lets to Tic Tac Toe activity
 
     // set up preferences
     private SharedPreferences prefs;
 
     // if true, images are displayed for the computer's hand choices
     boolean showImages;
+
+    private String imageName;
+    private HashMap<String, Drawable> drawableMap = new HashMap<String, Drawable> (); // image to Drawable resources
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -62,9 +68,19 @@ public class FirstFragment extends Fragment implements OnClickListener {
 
         View view = inflater.inflate(R.layout.first_fragment, container, false);
 
+        rpsChoiceText = (EditText) view.findViewById(R.id.rpsChoiceText);
         computerChoiceText = (TextView) view.findViewById(R.id.computerChoiceText);
         rpsPlayButton = (Button) view.findViewById(R.id.rpsPlayButton);
         rpsPlayButton.setOnClickListener(this);
+
+        goToButton = (Button) view.findViewById(R.id.goToButton);
+        goToButton.setOnClickListener(this);
+
+        rpsImage = (ImageView) view.findViewById(R.id.rpsImage);
+
+        drawableMap.put("rock", getResources().getDrawable(R.drawable.rock));
+        drawableMap.put("paper", getResources().getDrawable(R.drawable.paper));
+        drawableMap.put("scissors", getResources().getDrawable(R.drawable.scissors));
 
         return view;
     } // End onCreateView
@@ -72,11 +88,30 @@ public class FirstFragment extends Fragment implements OnClickListener {
     // Implement the interface for the listner
     @Override
     public void onClick(View v) {
-        if(v.getId() == R.id.rpsPlayButton) {
+        /*
+        if(v.getId() == R.id.goToButton) {
             Intent intent = new Intent(getActivity(), SecondActivity.class);
             startActivity(intent);
         } // End if statement
+        if(v.getId() == R.id.rpsPlayButton) {
+            play(v);
+        }
+        */
+        switch (v.getId()) {
+            case R.id.goToButton:
+                goToPlay();
+                break;
+            case R.id.rpsPlayButton:
+                playGame();
+                break;
+        }
+
     } // End onClick
+
+    private void goToPlay() {
+        Intent intent = new Intent(getActivity(), SecondActivity.class);
+        startActivity(intent);
+    }
 
     // Menu & Settings
     @Override
@@ -109,11 +144,11 @@ public class FirstFragment extends Fragment implements OnClickListener {
     } // End onOptionsItemSelected
 
 
-    public void play(View v) {
+    public void playGame() {
 
         // Close the soft keyboard
-        InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
-        imm.hideSoftInputFromWindow(v.getWindowToken(), 0);
+        //InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+        //imm.hideSoftInputFromWindow(v.getWindowToken(), 0);
 
         RockPaperScissors playerHand;
         // The user might enter an invalid choice, so catch it and propmt for the right choices
@@ -122,15 +157,16 @@ public class FirstFragment extends Fragment implements OnClickListener {
         }
         catch(Exception e)
         {
-            Toast.makeText(this, "Please enter: rock, paper, or scissors", Toast.LENGTH_LONG).show();
+            Toast.makeText(getActivity(), "Only enter rock, paper, or scissors!", Toast.LENGTH_LONG).show();
             return;
         }
 
         // Android makes a random hand choice and the winner is determined
         RockPaperScissors compHand = rpsGame.computerMove();
         computerChoiceText.setText(compHand.toString());
-        if (showImages)
+        if (showImages) {
             displayImage(compHand);
+        }
         //winnerText.setText( rpsGame.whoWon(compHand, playerHand).toString());
     }
 
@@ -150,8 +186,6 @@ public class FirstFragment extends Fragment implements OnClickListener {
         }
         rpsImage.setImageResource(id);
     }
-
-
 
 
         // To save values
