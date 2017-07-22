@@ -4,7 +4,6 @@ import android.app.Fragment;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.view.LayoutInflater;
@@ -32,6 +31,7 @@ public class FirstFragment extends Fragment implements OnClickListener {
 
     RockPaperScissorsGame rpsGame = new RockPaperScissorsGame();
 
+    private TextView playerName;
     private TextView computerChoiceText;
     private TextView winnerText;
     private EditText rpsChoiceText;
@@ -44,6 +44,9 @@ public class FirstFragment extends Fragment implements OnClickListener {
 
     // if true, images are displayed for the computer's hand choices
     boolean showImages;
+
+    private String playerNameText = "";
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -65,6 +68,7 @@ public class FirstFragment extends Fragment implements OnClickListener {
         View view = inflater.inflate(R.layout.first_fragment, container, false);
 
         rpsChoiceText = (EditText) view.findViewById(R.id.rpsChoiceText);
+        playerName = (TextView) view.findViewById(R.id.playerName);
         computerChoiceText = (TextView) view.findViewById(R.id.computerChoiceText);
         winnerText = (TextView) view.findViewById(R.id.winnerText);
         rpsPlayButton = (Button) view.findViewById(R.id.rpsPlayButton);
@@ -78,7 +82,7 @@ public class FirstFragment extends Fragment implements OnClickListener {
         return view;
     } // End onCreateView
 
-    // Implement the interface for the listner
+    // Implement the interface
     @Override
     public void onClick(View v) {
 
@@ -177,7 +181,7 @@ public class FirstFragment extends Fragment implements OnClickListener {
     public void onPause() {
         // save the instance variables
         SharedPreferences.Editor editor = prefs.edit();
-
+        editor.putString("playerNameText", playerNameText);
         editor.commit();
 
         super.onPause();
@@ -194,6 +198,9 @@ public class FirstFragment extends Fragment implements OnClickListener {
             rpsImage.setVisibility(View.GONE);
         else
             rpsImage.setVisibility(View.VISIBLE);
+
+        playerNameText = prefs.getString("edit_text_set_player_name", "");
+        playerName.setText(playerNameText);
 
     } // End OnResume()
 
