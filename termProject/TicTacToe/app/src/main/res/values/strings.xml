@@ -1,21 +1,18 @@
 <resources>
     <string name="app_name">TicTacToe</string>
 
-    <!-- FirstActivity -->
+    <!--AndroidManifest.xml -->
     <string name="first_activity_title">Rock Scissor Paper</string>
+    <string name="second_activity_title">Tic Tac Toe</string>
+    <string name="setting_menu_title">Setting</string>
+    <string name="about_menu_title">About</string>
 
     <!--first_fragment.xml -->
     <string name="rps_play_button">Play</string>
 
-
-    <!-- SecondActivity -->
-    <string name="second_activity_title">Tic Tac Toe</string>
-
-    <!-- SettingsActivity -->
-    <string name="setting_menu_title">Setting</string>
-
-    <!-- AboutActivity -->
-    <string name="about_menu_title">About</string>
+    <!-- about_activity -->
+    <string name="about_menu_head">* Welcome *</string>
+    <string name="about_menu_p1">1) Set player names on Setting menu</string>
 
     <!-- menu.xml -->
     <string name="menu_settings">Settings</string>

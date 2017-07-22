@@ -4,8 +4,36 @@
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:background="#e9e5ea"
                 tools:context=".AboutActivity" >
 
 
+    <LinearLayout
+        android:id="@+id/aboutMenuTextLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
+        <TextView
+            android:id="@+id/aboutMenuHead"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#f4b492"
+            android:paddingLeft="100sp"
+            android:text="@string/about_menu_head"
+            android:textAlignment="center"
+            android:textAllCaps="true"
+            android:textColor="@android:color/black"
+            android:textSize="30sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/aboutMenuP1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/about_menu_p1"
+            android:textAlignment="center"
+            android:textColor="#635e5c"/>
+
+    </LinearLayout>
 </RelativeLayout>
