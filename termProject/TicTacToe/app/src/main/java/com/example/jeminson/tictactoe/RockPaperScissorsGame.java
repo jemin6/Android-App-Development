@@ -19,11 +19,13 @@ public class RockPaperScissorsGame {
             win = Winner.tie;
         else if ((computerHand == RockPaperScissors.rock && playerHand == RockPaperScissors.scissors) ||
                 (computerHand == RockPaperScissors.paper && playerHand == RockPaperScissors.rock) ||
-                (computerHand == RockPaperScissors.scissors && playerHand == RockPaperScissors.paper))
+                (computerHand == RockPaperScissors.scissors && playerHand == RockPaperScissors.paper)) {
             win = Winner.computer;
-        else
-            win = Winner.player;
 
+        }
+        else {
+            win = Winner.player;
+        }
         return win;
     }
 

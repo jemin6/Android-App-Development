@@ -6,20 +6,21 @@
     android:orientation="horizontal"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:baselineAligned="false">
+    android:baselineAligned="false"
+    android:weightSum="1">
 
     <fragment
         android:id="@+id/first_fragment"
         android:name="com.example.jeminson.tictactoe.FirstFragment"
-        android:layout_width="wrap_content"
+        android:layout_width="536dp"
         android:layout_height="470dp"
-        android:layout_weight="0.28"
-        tools:layout="@layout/first_fragment" />
+        android:layout_weight="1.59"
+        tools:layout="@layout/first_fragment"/>
 
     <fragment
         android:id="@+id/second_fragment"
         android:name="com.example.jeminson.tictactoe.SecondFragment"
-        android:layout_width="525dp"
+        android:layout_width="471dp"
         android:layout_height="match_parent"
         tools:layout="@layout/second_fragment"/>
 

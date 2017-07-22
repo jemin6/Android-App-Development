@@ -76,6 +76,8 @@ public class FirstFragment extends Fragment implements OnClickListener {
 
         goToButton = (Button) view.findViewById(R.id.goToButton);
         goToButton.setOnClickListener(this);
+        //goToButton.setEnabled(false);
+
 
         rpsImage = (ImageView) view.findViewById(R.id.rpsImage);
 
@@ -85,13 +87,14 @@ public class FirstFragment extends Fragment implements OnClickListener {
     // Implement the interface
     @Override
     public void onClick(View v) {
-
         switch (v.getId()) {
             case R.id.goToButton:
                 goToPlay();
                 break;
             case R.id.rpsPlayButton:
                 playGame();
+                rpsPlayButton.setEnabled(false);
+                goToButton.setEnabled(true);
                 break;
         }
 
@@ -135,9 +138,6 @@ public class FirstFragment extends Fragment implements OnClickListener {
 
     public void playGame() {
 
-        // Close the soft keyboard
-        //InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
-        //imm.hideSoftInputFromWindow(v.getWindowToken(), 0);
 
         RockPaperScissors playerHand;
         // The user might enter an invalid choice, so catch it and propmt for the right choices
@@ -149,7 +149,6 @@ public class FirstFragment extends Fragment implements OnClickListener {
             Toast.makeText(getActivity(), "Only enter rock, paper, or scissors!", Toast.LENGTH_LONG).show();
             return;
         }
-
         // Android makes a random hand choice and the winner is determined
         RockPaperScissors compHand = rpsGame.computerMove();
         computerChoiceText.setText(compHand.toString());
