@@ -9,9 +9,11 @@
 
     <!--first_fragment.xml -->
     <string name="go_to_button">Go to Tic Tac Toe</string>
-    <string name="rps_choice_text">Enter rock, paper, or scissors</string>
-    <string name="compuer_choice_text_label">Compuer choice: </string>
+    <string name="rps_choice_text"/>
+    <string name="compuer_choice_text_label">Computer choice: </string>
     <string name="rps_play_button">Play</string>
+    <string name="winner_text"/>
+    <string name="winner_text_label">Winner:</string>
 
     <!-- about_activity -->
     <string name="about_menu_head">* Welcome *</string>
@@ -24,6 +26,7 @@
     <!-- preference.xml -->
     <string name="set_player_name_category">Set Name</string>
     <string name="edit_player_name_title">Set player name</string>
+    <string name="show_images"></string>
 
 
 </resources>

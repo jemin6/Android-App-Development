@@ -33,6 +33,7 @@ public class FirstFragment extends Fragment implements OnClickListener {
     RockPaperScissorsGame rpsGame = new RockPaperScissorsGame();
 
     private TextView computerChoiceText;
+    private TextView winnerText;
     private EditText rpsChoiceText;
     private ImageView rpsImage;
     private Button rpsPlayButton;
@@ -44,17 +45,12 @@ public class FirstFragment extends Fragment implements OnClickListener {
     // if true, images are displayed for the computer's hand choices
     boolean showImages;
 
-    private String imageName;
-    private HashMap<String, Drawable> drawableMap = new HashMap<String, Drawable> (); // image to Drawable resources
-
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         // set the default values for the preferences
-        PreferenceManager.setDefaultValues(getActivity(),
-                R.xml.preferences, false);
+        PreferenceManager.setDefaultValues(getActivity(), R.xml.preferences, false);
 
         // get the default SharedPreferences object
         prefs = PreferenceManager.getDefaultSharedPreferences(getActivity());
@@ -70,6 +66,7 @@ public class FirstFragment extends Fragment implements OnClickListener {
 
         rpsChoiceText = (EditText) view.findViewById(R.id.rpsChoiceText);
         computerChoiceText = (TextView) view.findViewById(R.id.computerChoiceText);
+        winnerText = (TextView) view.findViewById(R.id.winnerText);
         rpsPlayButton = (Button) view.findViewById(R.id.rpsPlayButton);
         rpsPlayButton.setOnClickListener(this);
 
@@ -78,25 +75,13 @@ public class FirstFragment extends Fragment implements OnClickListener {
 
         rpsImage = (ImageView) view.findViewById(R.id.rpsImage);
 
-        drawableMap.put("rock", getResources().getDrawable(R.drawable.rock));
-        drawableMap.put("paper", getResources().getDrawable(R.drawable.paper));
-        drawableMap.put("scissors", getResources().getDrawable(R.drawable.scissors));
-
         return view;
     } // End onCreateView
 
     // Implement the interface for the listner
     @Override
     public void onClick(View v) {
-        /*
-        if(v.getId() == R.id.goToButton) {
-            Intent intent = new Intent(getActivity(), SecondActivity.class);
-            startActivity(intent);
-        } // End if statement
-        if(v.getId() == R.id.rpsPlayButton) {
-            play(v);
-        }
-        */
+
         switch (v.getId()) {
             case R.id.goToButton:
                 goToPlay();
@@ -167,7 +152,7 @@ public class FirstFragment extends Fragment implements OnClickListener {
         if (showImages) {
             displayImage(compHand);
         }
-        //winnerText.setText( rpsGame.whoWon(compHand, playerHand).toString());
+        winnerText.setText( rpsGame.whoWon(compHand, playerHand).toString());
     }
 
     private void displayImage(RockPaperScissors rps) {
@@ -187,8 +172,7 @@ public class FirstFragment extends Fragment implements OnClickListener {
         rpsImage.setImageResource(id);
     }
 
-
-        // To save values
+    // To save values
     @Override
     public void onPause() {
         // save the instance variables
@@ -203,6 +187,13 @@ public class FirstFragment extends Fragment implements OnClickListener {
     @Override
     public void onResume() {
         super.onResume();
+
+        showImages = prefs.getBoolean(getResources().getString(R.string.show_images), true);
+
+        if (!showImages)
+            rpsImage.setVisibility(View.GONE);
+        else
+            rpsImage.setVisibility(View.VISIBLE);
 
     } // End OnResume()
 

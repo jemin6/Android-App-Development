@@ -38,13 +38,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
+            android:hint="Enter rock, paper, or scissors"
             android:inputType="textPersonName"
-            android:text="@string/rps_choice_text"/>
+            android:text="@string/rps_choice_text"
+            android:textColorHint="@android:color/darker_gray"/>
     </LinearLayout>
 
     <Button
         android:id="@+id/rpsPlayButton"
-        android:onClick="play"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="8dp"
@@ -72,33 +73,10 @@
         app:layout_constraintTop_toBottomOf="@+id/rpsPlayButton"
         app:layout_constraintVertical_bias="0.228">
 
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="TextView"/>
-
-        <ImageView
-            android:id="@+id/rpsImage"
-            android:layout_width="match_parent"
-            android:layout_height="209dp"
-            android:layout_marginBottom="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="8dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            app:layout_constraintBottom_toTopOf="@+id/goToButton"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.517"
-            app:srcCompat="@drawable/rsp"/>
-
         <LinearLayout
             android:id="@+id/computerChoiceLayout"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="horizontal">
 
             <TextView
@@ -119,6 +97,53 @@
                 android:text="TextView"
                 android:textColor="#f4b0b0"
                 android:textSize="18sp"
+                android:textStyle="italic"/>
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/rpsImage"
+            android:layout_width="match_parent"
+            android:layout_height="209dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:src="@drawable/rsp"
+            app:layout_constraintBottom_toTopOf="@+id/goToButton"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.517"
+            app:srcCompat="@drawable/rsp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/winnerTextLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/winner_text_label"
+                android:textAllCaps="true"
+                android:textColor="@color/colorAccent"
+                android:textSize="20sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/winnerText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="4.21"
+                android:background="#ffb400"
+                android:paddingLeft="5sp"
+                android:text="@string/winner_text"
+                android:textColor="@android:color/background_light"
+                android:textSize="20sp"
                 android:textStyle="italic"/>
         </LinearLayout>
 
