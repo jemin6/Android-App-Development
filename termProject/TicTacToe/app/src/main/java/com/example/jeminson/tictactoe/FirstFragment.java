@@ -1,6 +1,7 @@
 package com.example.jeminson.tictactoe;
 
 import android.app.Fragment;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -12,8 +13,14 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import org.w3c.dom.Text;
 
 
 /**
@@ -22,10 +29,18 @@ import android.widget.TextView;
 
 public class FirstFragment extends Fragment implements OnClickListener {
 
-    private Button rpsPlayButton;
+    RockPaperScissorsGame rpsGame = new RockPaperScissorsGame();
+
+    private TextView computerChoiceText;
+    private EditText rpsChoiceText;
+    private ImageView rpsImage;
+    private Button rpsPlayButton;           // This button
 
     // set up preferences
     private SharedPreferences prefs;
+
+    // if true, images are displayed for the computer's hand choices
+    boolean showImages;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -47,6 +62,7 @@ public class FirstFragment extends Fragment implements OnClickListener {
 
         View view = inflater.inflate(R.layout.first_fragment, container, false);
 
+        computerChoiceText = (TextView) view.findViewById(R.id.computerChoiceText);
         rpsPlayButton = (Button) view.findViewById(R.id.rpsPlayButton);
         rpsPlayButton.setOnClickListener(this);
 
@@ -92,7 +108,40 @@ public class FirstFragment extends Fragment implements OnClickListener {
         } // End switch
     } // End onOptionsItemSelected
 
-    // To save values
+
+    public void play(View v) {
+
+        // Close the soft keyboard
+        InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+        imm.hideSoftInputFromWindow(v.getWindowToken(), 0);
+
+        RockPaperScissors playerHand;
+        // The user might enter an invalid choice, so catch it and propmt for the right choices
+        try {
+            playerHand = RockPaperScissors.valueOf(rpsChoiceText.getText().toString().toLowerCase());
+        }
+        catch(Exception e)
+        {
+            Toast.makeText(this, "Please enter: rock, paper, or scissors", Toast.LENGTH_LONG).show();
+            return;
+        }
+
+        // Android makes a random hand choice and the winner is determined
+        RockPaperScissors compHand = rpsGame.computerMove();
+        computerChoiceText.setText(compHand.toString());
+        if (showImages)
+            displayImage(compHand);
+        //winnerText.setText( rpsGame.whoWon(compHand, playerHand).toString());
+    }
+
+    private void displayImage(RockPaperScissors rps) {
+
+    }
+
+
+
+
+        // To save values
     @Override
     public void onPause() {
         // save the instance variables

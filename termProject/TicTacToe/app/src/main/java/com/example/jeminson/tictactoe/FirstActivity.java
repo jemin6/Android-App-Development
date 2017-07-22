@@ -11,6 +11,6 @@ public class FirstActivity extends AppCompatActivity {
 
         setContentView(R.layout.first_activity);
 
-
     } // End onCreate
+
 } // End FirstActivity class
