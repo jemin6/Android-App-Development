@@ -1,12 +1,15 @@
 package com.example.jeminson.tidever32;
 
+import android.database.Cursor;
 import android.os.AsyncTask;
+import android.support.v4.widget.SimpleCursorAdapter;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
+import android.widget.ListView;
 import android.widget.Spinner;
 
 import java.io.InputStream;
@@ -18,12 +21,23 @@ public class MainActivity extends AppCompatActivity implements OnItemSelectedLis
     private DataAccessLayer dal = new DataAccessLayer(this);
 
     private Spinner locationSpinner;
+    ListView itemsListView;
+
+
+    Cursor cursor = null;
+    SimpleCursorAdapter adapter = null;
+
     String locationSelection = "Wauna";
+    String stateSelection = "OR";
+    String dateSelection = "2017/01/01";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        itemsListView = (ListView)findViewById(R.id.tideListView);
+
 
         // Set up location selection spinner
         locationSpinner = (Spinner) findViewById(R.id.locationSpinner);
@@ -44,7 +58,7 @@ public class MainActivity extends AppCompatActivity implements OnItemSelectedLis
                 break;
         }
         // Get the selected location
-        //getTide("OR", locationSelection);
+        //getTide(stateSelection, locationSelection);
     } // End onItemSelected
 
     @Override
