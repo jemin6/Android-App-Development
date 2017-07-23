@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">TideVer3.2</string>
+
+    <string-array name="locations_array">
+        <item>Wauna</item>
+        <item>Garibaldi</item>
+        <item>Skamokawa</item>
+    </string-array>
+
+</resources>
