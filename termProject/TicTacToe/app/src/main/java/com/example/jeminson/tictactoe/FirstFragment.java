@@ -42,7 +42,7 @@ public class FirstFragment extends Fragment implements OnClickListener {
 
     private String imageName;
     private String playerNameText = "";
-    
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -183,6 +183,7 @@ public class FirstFragment extends Fragment implements OnClickListener {
     public void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
         outState.putString("computerChoiceTextView",(String)computerChoiceText.getText());
+        outState.putString("winnerText", (String)winnerText.getText());
     }
 
     @Override
@@ -190,6 +191,7 @@ public class FirstFragment extends Fragment implements OnClickListener {
         super.onActivityCreated(savedInstanceState);
         if (savedInstanceState != null) {
             computerChoiceText.setText(savedInstanceState.getString("computerChoiceTextView"));
+            winnerText.setText(savedInstanceState.getString("winnerText"));
         }
     }
 

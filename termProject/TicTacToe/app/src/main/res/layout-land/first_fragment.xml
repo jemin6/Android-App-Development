@@ -80,16 +80,14 @@
     <LinearLayout
         android:id="@+id/rpsImageLayout"
         android:layout_width="262dp"
-        android:layout_height="199dp"
-        android:layout_marginBottom="8dp"
+        android:layout_height="235dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="16dp"
         android:orientation="vertical"
         app:layout_constraintRight_toRightOf="parent"
         android:layout_marginTop="8dp"
-        app:layout_constraintVertical_bias="0.0"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent">
+        >
 
         <LinearLayout
             android:id="@+id/computerChoiceLayout"
@@ -120,7 +118,7 @@
         <ImageView
             android:id="@+id/rpsImage"
             android:layout_width="match_parent"
-            android:layout_height="209dp"
+            android:layout_height="153dp"
             android:layout_marginBottom="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginLeft="8dp"
@@ -143,7 +141,7 @@
             <TextView
                 android:id="@+id/winnerTextLabel"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text="@string/winner_text_label"
                 android:textAllCaps="true"
