@@ -4,6 +4,7 @@
     <!--AndroidManifest.xml -->
     <string name="first_activity_title">Rock Scissor Paper</string>
     <string name="second_activity_title">Tic Tac Toe</string>
+    <string name="tttgame_activity_title">Tic Tac Toe</string>
     <string name="setting_menu_title">Setting</string>
     <string name="about_menu_title">About</string>
 

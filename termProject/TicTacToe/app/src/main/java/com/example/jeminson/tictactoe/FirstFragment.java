@@ -16,9 +16,11 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -94,7 +96,6 @@ public class FirstFragment extends Fragment implements OnClickListener {
                 String check_text = rpsChoiceText.getText().toString().trim();
                 if(check_text.isEmpty() || check_text.length() == 0 || check_text.equals("")){
                     Toast.makeText(getActivity(), "You did not enter rock, paper, or scissor", Toast.LENGTH_SHORT).show();
-                    //rpsPlayButton.setEnabled(false);
                     computerChoiceText.setText("");
                     winnerText.setText("");
                     goToButton.setEnabled(false);
@@ -164,7 +165,7 @@ public class FirstFragment extends Fragment implements OnClickListener {
         if (showImages) {
             displayImage(compHand);
         }
-        winnerText.setText( rpsGame.whoWon(compHand, playerHand).toString());
+        winnerText.setText(rpsGame.whoWon(compHand, playerHand).toString());
     }
 
     private void displayImage(RockPaperScissors rps) {
@@ -190,6 +191,7 @@ public class FirstFragment extends Fragment implements OnClickListener {
         // save the instance variables
         SharedPreferences.Editor editor = prefs.edit();
         editor.putString("playerNameText", playerNameText);
+        //editor.putString("rpsWinner",rpsWinner);
         editor.commit();
 
         super.onPause();
@@ -209,6 +211,8 @@ public class FirstFragment extends Fragment implements OnClickListener {
 
         playerNameText = prefs.getString("edit_text_set_player_name", "");
         playerName.setText(playerNameText);
+        //rpsWinner = prefs.getString("winner_text","");
+        //winnerText.setText(rpsWinner);
 
     } // End OnResume()
 

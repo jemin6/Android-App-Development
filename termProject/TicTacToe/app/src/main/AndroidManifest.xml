@@ -27,6 +27,13 @@
         </activity>
 
         <activity
+            android:name=".TicTacToeGame"
+            android:label="@string/tttgame_activity_title"
+            android:parentActivityName=".SecondActivity">
+
+        </activity>
+
+        <activity
             android:name=".SettingsActivity"
             android:label="@string/setting_menu_title" >
         </activity>
