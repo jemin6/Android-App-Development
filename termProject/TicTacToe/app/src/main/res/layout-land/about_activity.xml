@@ -59,5 +59,25 @@
             android:textColor="#635e5c"
             android:textSize="20sp"/>
 
+        <TextView
+            android:id="@+id/aboutMenuP4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="10sp"
+            android:text="@string/about_menu_p4"
+            android:textAlignment="center"
+            android:textColor="#635e5c"
+            android:textSize="20sp"/>
+
+        <TextView
+            android:id="@+id/aboutMenuP5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="10sp"
+            android:text="@string/about_menu_p5"
+            android:textAlignment="center"
+            android:textColor="#635e5c"
+            android:textSize="20sp"/>
+
     </LinearLayout>
 </RelativeLayout>

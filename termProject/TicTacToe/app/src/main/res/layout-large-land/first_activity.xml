@@ -12,15 +12,14 @@
     <fragment
         android:id="@+id/first_fragment"
         android:name="com.example.jeminson.tictactoe.FirstFragment"
-        android:layout_width="536dp"
+        android:layout_width="544dp"
         android:layout_height="470dp"
-        android:layout_weight="4.88"
         tools:layout="@layout/first_fragment"/>
 
     <fragment
         android:id="@+id/second_fragment"
         android:name="com.example.jeminson.tictactoe.SecondFragment"
-        android:layout_width="471dp"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:layout="@layout/second_fragment"/>
 

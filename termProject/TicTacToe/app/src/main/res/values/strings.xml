@@ -21,6 +21,8 @@
     <string name="about_menu_p1">1) Set player name on Setting menu</string>
     <string name="about_menu_p2">2) Enter rock, paper, or scissor to decide who will go first</string>
     <string name="about_menu_p3">3) Then, press [NEXT] button</string>
+    <string name="about_menu_p4">4) </string>
+    <string name="about_menu_p5">5) Go play the Tic Tac Toe</string>
 
 
     <!-- menu.xml -->
