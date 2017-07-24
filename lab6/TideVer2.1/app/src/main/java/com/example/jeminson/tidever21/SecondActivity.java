@@ -20,9 +20,7 @@ public class SecondActivity extends AppCompatActivity {
     private TextView showDate;
 
     private DataAccessLayer dal = new DataAccessLayer(this);
-
     Cursor cursor = null;
-
     SimpleCursorAdapter adapter = null;
 
     @Override
