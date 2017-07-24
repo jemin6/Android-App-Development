@@ -38,6 +38,7 @@ public class FirstFragment extends Fragment implements OnClickListener {
     // set up preferences
     private SharedPreferences prefs;
 
+    boolean showImages;
 
     private String imageName;
     private String playerNameText = "";
@@ -156,6 +157,9 @@ public class FirstFragment extends Fragment implements OnClickListener {
         // Android makes a random hand choice and the winner is determined
         RockPaperScissors compHand = rpsGame.computerMove();
         computerChoiceText.setText(compHand.toString());
+        if (showImages) {
+            displayImage(compHand);
+        }
         winnerText.setText(rpsGame.whoWon(compHand, playerHand).toString());
     }
 
@@ -206,6 +210,8 @@ public class FirstFragment extends Fragment implements OnClickListener {
     @Override
     public void onResume() {
         super.onResume();
+
+        showImages = prefs.getBoolean(getResources().getString(R.string.show_images), true);
 
         playerNameText = prefs.getString("edit_text_set_player_name", "");
         playerName.setText(playerNameText);
