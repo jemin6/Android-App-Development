@@ -20,6 +20,8 @@ public class TideSQLiteHelper extends SQLiteOpenHelper {
     public static final String PRED = "pred";
     public static final String TYPE = "type";
 
+    public static final String STATE = "state";
+    public static final String CITY = "city";
 
     private Context context = null;
 
@@ -35,6 +37,8 @@ public class TideSQLiteHelper extends SQLiteOpenHelper {
                 + TIME + " TEXT,"
                 + PRED + " INTEGER,"
                 + TYPE + " TEXT,"
+                + STATE + " TEXT,"
+                + CITY + " TEXT,"
                 + ")" );
     }
 

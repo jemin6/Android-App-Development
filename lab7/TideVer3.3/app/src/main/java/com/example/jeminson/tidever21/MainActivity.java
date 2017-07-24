@@ -129,10 +129,37 @@ public class MainActivity extends AppCompatActivity implements OnClickListener, 
                 locationSelection = "Wauna";
                 break;
             case 1:
-                locationSelection = "Garibaldi";
+                locationSelection = "Charleston";
                 break;
             case 2:
+                locationSelection = "Southbeach";
+                break;
+            case 3:
+                locationSelection = "Dick Point";
+                break;
+            case 4:
+                locationSelection = "Port Orford";
+                break;
+            case 5:
+                locationSelection = "Depoe Bay";
+                break;
+            case 6:
+                locationSelection = "Cape Horn";
+                break;
+            case 7:
+                locationSelection = "Longview";
+                break;
+            case 8:
+                locationSelection = "Garibaldi";
+                break;
+            case 9:
                 locationSelection = "Skamokawa";
+                break;
+            case 10:
+                locationSelection = "Saint Helens";
+                break;
+            case 11:
+                locationSelection = "Vancouver";
                 break;
         }
         // Get the selected location

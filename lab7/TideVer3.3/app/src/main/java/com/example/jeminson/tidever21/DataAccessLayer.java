@@ -37,7 +37,7 @@ public class DataAccessLayer {
         TideSQLiteHelper helper = new TideSQLiteHelper(context);
         SQLiteDatabase db = helper.getReadableDatabase();
 
-        // Set up a query for a weather forecast for one location
+        // Set up a query
         String query = "SELECT * FROM " + ITEM + " WHERE " + CITY + " = ? ORDER BY Date ASC";
         String[] variables = new String[]{state, city};    // rawQuery must not include a trailing ';'
 
@@ -77,12 +77,15 @@ public class DataAccessLayer {
         TideSQLiteHelper helper = new TideSQLiteHelper(context);
         SQLiteDatabase db = helper.getWritableDatabase();
 
-        // Put weather forecast in the database
+        // Put in the database
         ContentValues cv = new ContentValues();
 
         for (TideItem item : items) {
-            cv.put(STATE, items.getState() );
-            cv.put(CITY, items.getCity() );
+            cv.put(TIME, item.getTideTime());
+            cv.put(PRED, item.getTidePred());
+            cv.put(TYPE, item.getTideType());
+            cv.put(STATE, items.getState());
+            cv.put(CITY, items.getCity());
 
             db.insert(ITEM, null, cv);
         }

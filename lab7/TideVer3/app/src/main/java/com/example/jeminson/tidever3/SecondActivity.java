@@ -6,6 +6,8 @@ package com.example.jeminson.tidever3;
 
 
 import android.content.Intent;
+import android.database.Cursor;
+import android.support.v4.widget.SimpleCursorAdapter;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
@@ -15,6 +17,10 @@ public class SecondActivity extends AppCompatActivity {
 
     private TextView showLocation;
     private TextView showDate;
+
+    private DataAccessLayer dal = new DataAccessLayer(this);
+    Cursor cursor = null;
+    SimpleCursorAdapter adapter = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
