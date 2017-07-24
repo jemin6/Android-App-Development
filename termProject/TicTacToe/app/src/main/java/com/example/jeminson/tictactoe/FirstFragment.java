@@ -184,6 +184,9 @@ public class FirstFragment extends Fragment implements OnClickListener {
         super.onSaveInstanceState(outState);
         outState.putString("computerChoiceTextView",(String)computerChoiceText.getText());
         outState.putString("winnerText", (String)winnerText.getText());
+        outState.putBoolean("rpsPlayButton", false);
+        outState.putBoolean("goToButton", true);
+
     }
 
     @Override
@@ -192,6 +195,9 @@ public class FirstFragment extends Fragment implements OnClickListener {
         if (savedInstanceState != null) {
             computerChoiceText.setText(savedInstanceState.getString("computerChoiceTextView"));
             winnerText.setText(savedInstanceState.getString("winnerText"));
+            rpsPlayButton.setEnabled(savedInstanceState.getBoolean("rpsPlayButton"));
+            goToButton.setEnabled(savedInstanceState.getBoolean("goToButton"));
+
         }
     }
 
