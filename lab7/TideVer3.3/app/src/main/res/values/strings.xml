@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">Tide Ver 3</string>
+    <string name="second_activity_name">Tide Table</string>
+
+    <string name="location_label_text">Location</string>
+    <string name="show_tide_button">Show Tide</string>
+    <string name="welcome_text">Welcome!</string>
+    <string name="show_location_text"/>
+    <string name="show_location_label">Location ZIP :</string>
+    <string name="date_text_label">Date : </string>
+    <string name="day_text_label">Day : </string>
+    <string name="time_text_label">Time : </string>
+    <string name="date_label">Select Date</string>
+    <string name="display_date"></string>
+    <string name="show_date_label">Date:</string>
+    <string name="show_date"/>
+    <string name="message_text">If nothing shows, Date selected has no data! Choose new date</string>
+    <string name="message_text_1">Choose between 2017/01/01 - 2017/01/04</string>
+
+    <string-array name="locations_array">
+        <item>Wauna</item>
+        <item>Charleston</item>
+        <item>Southbeach</item>
+        <item>Dick Point</item>
+        <item>Port Orford</item>
+        <item>Depoe Bay</item>
+        <item>Cape Horn</item>
+        <item>Longview</item>
+        <item>Garibaldi</item>
+        <item>Skamokawa</item>
+        <item>Saint Helens</item>
+        <item>Vancouver</item>
+    </string-array>
+
+</resources>
