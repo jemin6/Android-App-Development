@@ -3,6 +3,7 @@ package com.example.jeminson.tictactoe;
 import android.app.Fragment;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.media.Rating;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.view.LayoutInflater;
@@ -10,6 +11,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.view.View.OnClickListener;
+import android.widget.RatingBar;
+import android.widget.Toast;
 
 
 /**
@@ -22,6 +25,7 @@ public class SecondFragment extends Fragment implements OnClickListener {
     private SharedPreferences prefs;
 
     private Button gotoTTTGameButton;
+    private RatingBar ratingBar;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -45,6 +49,15 @@ public class SecondFragment extends Fragment implements OnClickListener {
 
         gotoTTTGameButton = (Button) view.findViewById(R.id.gotoTTTGameButton);
         gotoTTTGameButton.setOnClickListener(this);
+
+        ratingBar = (RatingBar) view.findViewById(R.id.ratingBar);
+        ratingBar.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
+            public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
+                if (fromUser) {
+                    Toast.makeText(ratingBar.getContext(), "Your Selected Ratings  : " + String.valueOf(rating), Toast.LENGTH_SHORT).show();
+                } // End if statement
+            } // End onRatingChaged
+        });
 
         return view;
     }
