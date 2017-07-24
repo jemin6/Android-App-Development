@@ -5,6 +5,41 @@
               android:layout_height="fill_parent"
               android:id="@+id/fullscreen_content">
 
+    <LinearLayout
+        android:id="@+id/infoViewLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/playerMarkText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.45"
+            android:background="#ffb060"
+            android:paddingBottom="5sp"
+            android:paddingLeft="5sp"
+            android:paddingTop="5sp"
+            android:text="Player Mark:  X"
+            android:textColor="@android:color/background_light"
+            android:textSize="20sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/computerMarkText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.20"
+            android:background="#ffffff"
+            android:paddingBottom="5sp"
+            android:paddingLeft="5sp"
+            android:paddingTop="5sp"
+            android:text="Computer Mark: O"
+            android:textColor="#ffb060"
+            android:textSize="20sp"
+            android:textStyle="bold"/>
+    </LinearLayout>
+
     <TableLayout
         android:id="@+id/Grid"
         android:layout_width="match_parent"
@@ -158,7 +193,7 @@
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="50dp"
-        android:background="#4d4d4d"
+        android:background="#ffe8a0"
         android:orientation="horizontal">
 
         <TextView
@@ -169,6 +204,9 @@
             android:gravity="center"
             android:onClick="resetClick"
             android:text="RESET"
-            android:textSize="20sp"/>
+            android:textAlignment="center"
+            android:textColor="@color/colorAccent"
+            android:textSize="30sp"
+            android:textStyle="bold"/>
     </LinearLayout>
 </LinearLayout>

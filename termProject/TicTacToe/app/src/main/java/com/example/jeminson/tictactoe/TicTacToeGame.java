@@ -145,7 +145,7 @@ public class TicTacToeGame extends AppCompatActivity {
 
         //Creates notification of winner
         Context context = getApplicationContext();
-        Toast toast = Toast.makeText(context, player, Toast.LENGTH_LONG);
+        Toast toast = Toast.makeText(context, player, Toast.LENGTH_SHORT);
         toast.show();
     }
 
