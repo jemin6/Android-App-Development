@@ -22,21 +22,19 @@ public class TicTacToeComputerPlay {
         return new int[] { result[0], result[1] };
     }
 
-    //Computer will find random spot recursively until it finds an empty spot
+    //Computer finds random spot recursively
     private int[] computerMoves() {
-        int column;
-        int row;
-        row = (int)((Math.random() * 3));
-        column = (int)(Math.random() * 3);
+        int column = (int)(Math.random() * 3);
+        int row = (int)((Math.random() * 3));
         if (gameBoard[row][column] != null && gameBoard[row][column].equals(""))
         {
             gameBoard[row][column]="O";
             return new int[]{row, column};
-        }
+        } // End if statement
         else
         {
             return computerMoves();
-        }
-    }
+        } // End else statement
+    } // End computerMoves
 
-}
+} // End TicTacToeComputerPlay
