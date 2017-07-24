@@ -38,6 +38,7 @@
 
     <!-- second_fragment.xml -->
     <string name="goto_tttgame_buttoon">Play Tic Tac Toe</string>
+    <string name="rating_text_label">Rate</string>
 
 
 </resources>
