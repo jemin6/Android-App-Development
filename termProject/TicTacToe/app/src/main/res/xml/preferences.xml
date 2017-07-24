@@ -14,11 +14,5 @@
 
     </PreferenceCategory>
 
-    <CheckBoxPreference
-        android:key="@string/show_images"
-        android:title="Show images"
-        android:summary="Show image for computer's choice"
-        android:defaultValue="true" />
-
 
 </PreferenceScreen>

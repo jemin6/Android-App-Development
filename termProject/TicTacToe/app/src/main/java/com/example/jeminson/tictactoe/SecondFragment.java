@@ -51,17 +51,26 @@ public class SecondFragment extends Fragment implements OnClickListener {
 
     @Override
     public void onClick(View v) {
-        /*
+
         switch (v.getId()) {
             case R.id.gotoTTTGameButton:
                 Intent intent = new Intent(getActivity(), TicTacToeGame.class);
                 startActivity(intent);
                 break;
         }
-        */
+        /*
         if(v.getId() == R.id.gotoTTTGameButton) {
             Intent intent = new Intent(getActivity(), TicTacToeGame.class);
             startActivity(intent);
         } // End if statement
+        */
     }
+
+    // To restore values
+    @Override
+    public void onResume() {
+        super.onResume();
+
+    }
+
 }

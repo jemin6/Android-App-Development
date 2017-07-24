@@ -9,7 +9,7 @@
     <string name="about_menu_title">About</string>
 
     <!--first_fragment.xml -->
-    <string name="go_to_button">Go to Tic Tac Toe</string>
+    <string name="go_to_button">Next</string>
     <string name="rps_choice_text"/>
     <string name="compuer_choice_text_label">Computer choice: </string>
     <string name="rps_play_button">Play</string>
@@ -33,6 +33,9 @@
     <string name="show_images"></string>
     <string name="player_name_label">Player Name:</string>
     <string name="player_name"/>
+
+    <!-- second_fragment.xml -->
+    <string name="goto_tttgame_buttoon">Play Tic Tac Toe</string>
 
 
 </resources>

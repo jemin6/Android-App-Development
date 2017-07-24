@@ -1,12 +1,10 @@
 package com.example.jeminson.tictactoe;
 
 import android.app.Fragment;
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -14,13 +12,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
-import android.view.inputmethod.EditorInfo;
-import android.view.inputmethod.InputMethodManager;
-import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -44,10 +38,10 @@ public class FirstFragment extends Fragment implements OnClickListener {
     // set up preferences
     private SharedPreferences prefs;
 
-    // if true, images are displayed for the computer's hand choices
-    boolean showImages;
 
+    private String imageName;
     private String playerNameText = "";
+    private String computerChoiceTextView = "";
 
 
     @Override
@@ -162,9 +156,6 @@ public class FirstFragment extends Fragment implements OnClickListener {
         // Android makes a random hand choice and the winner is determined
         RockPaperScissors compHand = rpsGame.computerMove();
         computerChoiceText.setText(compHand.toString());
-        if (showImages) {
-            displayImage(compHand);
-        }
         winnerText.setText(rpsGame.whoWon(compHand, playerHand).toString());
     }
 
@@ -184,6 +175,21 @@ public class FirstFragment extends Fragment implements OnClickListener {
         }
         rpsImage.setImageResource(id);
     }
+/*
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putString("computerChoiceTextView",computerChoiceTextView);
+    }
+
+    @Override
+    public void onActivityCreated(Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        if (savedInstanceState != null) {
+            computerChoiceTextView = savedInstanceState.getString("computerChoiceTextView","");
+        }
+    }
+*/
 
     // To save values
     @Override
@@ -191,7 +197,6 @@ public class FirstFragment extends Fragment implements OnClickListener {
         // save the instance variables
         SharedPreferences.Editor editor = prefs.edit();
         editor.putString("playerNameText", playerNameText);
-        //editor.putString("rpsWinner",rpsWinner);
         editor.commit();
 
         super.onPause();
@@ -202,18 +207,11 @@ public class FirstFragment extends Fragment implements OnClickListener {
     public void onResume() {
         super.onResume();
 
-        showImages = prefs.getBoolean(getResources().getString(R.string.show_images), true);
-
-        if (!showImages)
-            rpsImage.setVisibility(View.GONE);
-        else
-            rpsImage.setVisibility(View.VISIBLE);
-
         playerNameText = prefs.getString("edit_text_set_player_name", "");
         playerName.setText(playerNameText);
-        //rpsWinner = prefs.getString("winner_text","");
-        //winnerText.setText(rpsWinner);
+
 
     } // End OnResume()
+
 
 }
