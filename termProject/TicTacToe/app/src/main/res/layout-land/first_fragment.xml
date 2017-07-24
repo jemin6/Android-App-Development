@@ -79,11 +79,11 @@
 
     <LinearLayout
         android:id="@+id/rpsImageLayout"
-        android:layout_width="290dp"
-        android:layout_height="225dp"
+        android:layout_width="262dp"
+        android:layout_height="199dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
+        android:layout_marginRight="16dp"
         android:orientation="vertical"
         app:layout_constraintRight_toRightOf="parent"
         android:layout_marginTop="8dp"
@@ -169,13 +169,16 @@
     <Button
         android:id="@+id/goToButton"
         android:layout_width="0dp"
-        android:layout_height="50dp"
+        android:layout_height="40dp"
         android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:background="#de60ff"
         android:enabled="false"
+        android:paddingBottom="5sp"
         android:text="@string/go_to_button"
         android:textColor="@color/text_color"
         android:textSize="35dp"
@@ -185,8 +188,6 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rpsImageLayout"
-        app:layout_constraintVertical_bias="1.0"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"/>
+        app:layout_constraintVertical_bias="1.0"/>
 
 </android.support.constraint.ConstraintLayout>

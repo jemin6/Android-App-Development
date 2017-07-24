@@ -78,6 +78,26 @@ public class SecondFragment extends Fragment implements OnClickListener {
         } // End if statement
         */
     }
+/*
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putString("computerChoiceTextView",computerChoiceTextView);
+    }
+
+    @Override
+    public void onActivityCreated(Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        if (savedInstanceState != null) {
+            computerChoiceTextView = savedInstanceState.getString("computerChoiceTextView","");
+        }
+    }
+*/
+
+    /*
+    public void onPause() {
+
+    }
 
     // To restore values
     @Override
@@ -85,5 +105,5 @@ public class SecondFragment extends Fragment implements OnClickListener {
         super.onResume();
 
     }
-
+    */
 }

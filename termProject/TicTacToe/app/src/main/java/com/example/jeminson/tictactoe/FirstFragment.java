@@ -42,8 +42,7 @@ public class FirstFragment extends Fragment implements OnClickListener {
 
     private String imageName;
     private String playerNameText = "";
-    private String computerChoiceTextView = "";
-
+    
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -179,21 +178,21 @@ public class FirstFragment extends Fragment implements OnClickListener {
         }
         rpsImage.setImageResource(id);
     }
-/*
+
     @Override
     public void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
-        outState.putString("computerChoiceTextView",computerChoiceTextView);
+        outState.putString("computerChoiceTextView",(String)computerChoiceText.getText());
     }
 
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         if (savedInstanceState != null) {
-            computerChoiceTextView = savedInstanceState.getString("computerChoiceTextView","");
+            computerChoiceText.setText(savedInstanceState.getString("computerChoiceTextView"));
         }
     }
-*/
+
 
     // To save values
     @Override

@@ -24,7 +24,6 @@
     <string name="about_menu_p4">4) </string>
     <string name="about_menu_p5">5) Go play the Tic Tac Toe</string>
 
-
     <!-- menu.xml -->
     <string name="menu_settings">Settings</string>
     <string name="menu_about">About</string>
@@ -39,6 +38,7 @@
     <!-- second_fragment.xml -->
     <string name="goto_tttgame_buttoon">Play Tic Tac Toe</string>
     <string name="rating_text_label">Rate</string>
+    <string name="rate_about_text">* Please rate the game</string>
 
 
 </resources>

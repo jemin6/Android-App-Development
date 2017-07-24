@@ -20,6 +20,7 @@ public class TicTacToeGame extends AppCompatActivity {
     private int moveCount = 0;
     private int xLoc = 0;
     private int yLoc = 0;
+    private int countWin = 0;
 
     private String playerMark = "X";
     private String computerMark = "O";
@@ -119,6 +120,7 @@ public class TicTacToeGame extends AppCompatActivity {
         //Checks if player is the winner
         if (gameBoard.isWinner(player)) {
             announce(true, player);
+            countWin++;
             return true;
         } // End if
         //it's a draw
