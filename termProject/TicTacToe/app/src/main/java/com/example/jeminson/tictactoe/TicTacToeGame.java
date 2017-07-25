@@ -54,11 +54,12 @@ public class TicTacToeGame extends AppCompatActivity {
 
     public void resetClick(View v) {
         clearBoard();
-        countWin = 0;
+        //countWin = 0;
         if (computerMark == "X") {
             getComputerMove(gameBoard);
         } // End if
     }
+
 
     public void cellClick(View v) {
         //Get the id of the clicked object
@@ -128,7 +129,6 @@ public class TicTacToeGame extends AppCompatActivity {
         //Checks if player is the winner
         if (gameBoard.isWinner(player)) {
             announce(true, player);
-            countWin++;
             return true;
         } // End if
         //it's a draw
@@ -142,7 +142,8 @@ public class TicTacToeGame extends AppCompatActivity {
     private void announce(boolean endState, String player) {
         if (endState == true) {
             if (player.equals("X")) {
-                player = "Player Won!";
+                countWin++;
+                player = "Player Won! Total win count is: " + countWin;
             } // End nested if
             else {
                 player = "Computer Won!";
