@@ -63,14 +63,16 @@ public class SecondFragment extends Fragment implements OnClickListener {
         toggleText = (TextView) view.findViewById(R.id.toggleText);
         toggleButton = (ToggleButton) view.findViewById(R.id.toggleButton);
 
-        toggleText.setText("OFF");
+        //toggleText.setText("OFF");
         toggleButton.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
                 if(isChecked) {
-                    toggleText.setText("On");
+                    gotoTTTGameButton.setEnabled(false);
+                    toggleText.setText("Press to turn on [Play Tic Tac Toe button]");
                 } else {
-                    toggleText.setText("Off");
+                    gotoTTTGameButton.setEnabled(true);
+                    toggleText.setText("Press to turn off [Play Tic Tac Toe button]");
                 }
             }
         });

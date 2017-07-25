@@ -106,7 +106,7 @@
     <LinearLayout
         android:id="@+id/toggelLayout"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="50dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginTop="8dp"
@@ -117,7 +117,7 @@
 
         <TextView
             android:id="@+id/toggleText"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:paddingLeft="10dp"
@@ -125,9 +125,8 @@
 
         <ToggleButton
             android:id="@+id/toggleButton"
-            android:layout_width="wrap_content"
+            android:layout_width="68dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:paddingRight="10dp"
             android:text="ToggleButton"
             tools:layout_editor_absoluteX="130dp"

@@ -41,7 +41,7 @@
     <string name="rate_about_text">* Please rate the game</string>
     <string name="show_winner_label">Winner of the Rock Paper Scissors :</string>
     <string name="show_winner"/>
-    <string name="toggle_text">Check win time</string>
+    <string name="toggle_text">Press the button</string>
 
     <!-- ttgame_activity -->
     <string name="win_count_text_view">Check win counts</string>
