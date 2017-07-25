@@ -31,7 +31,7 @@ public class TicTacToeGame extends AppCompatActivity implements OnItemSelectedLi
     private String playerMark = "X";
     private String computerMark = "O";
     private String content;
-    private String countSelection = "Player";
+    private String countSelection = "Choose";
 
     private Spinner countSpinner;
 
@@ -62,10 +62,13 @@ public class TicTacToeGame extends AppCompatActivity implements OnItemSelectedLi
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
         switch (position) {
             case 0:
+                countSelection = "Choose";
+                break;
+            case 1:
                 countSelection = "Player";
                 Toast.makeText(getApplicationContext(),"Player win count: " + countWin, Toast.LENGTH_SHORT).show();
                 break;
-            case 1:
+            case 2:
                 countSelection = "Computer";
                 Toast.makeText(getApplicationContext(),"Computer win count: " + comCountWin, Toast.LENGTH_SHORT).show();
                 break;

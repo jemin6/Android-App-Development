@@ -46,6 +46,7 @@
     <!-- ttgame_activity -->
     <string name="win_count_text_view">Check win counts</string>
     <string-array name="count_array">
+        <item>Choose</item>
         <item>Player</item>
         <item>Computer</item>
     </string-array>
