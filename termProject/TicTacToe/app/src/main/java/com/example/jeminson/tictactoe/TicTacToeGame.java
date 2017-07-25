@@ -10,22 +10,30 @@ import android.content.res.Configuration;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.AdapterView.OnItemSelectedListener;
+
 
 import org.w3c.dom.Text;
 
-public class TicTacToeGame extends AppCompatActivity {
+public class TicTacToeGame extends AppCompatActivity implements OnItemSelectedListener{
 
     private TicTacToeGameBoard gameBoard = null;
     private int moveCount = 0;
     private int xLoc = 0;
     private int yLoc = 0;
     private int countWin = 0;
+    private int comCountWin = 0;
 
     private String playerMark = "X";
     private String computerMark = "O";
     private String content;
+    private String countSelection = "Player";
+
+    private Spinner countSpinner;
 
     private boolean isOver = false;
 
@@ -44,6 +52,28 @@ public class TicTacToeGame extends AppCompatActivity {
         //Set up for initial variables
         gameBoard = new TicTacToeGameBoard();
         computer = new TicTacToeComputerPlay(computerMark);
+
+        countSpinner = (Spinner) findViewById(R.id.countSpinner);
+        countSpinner.setOnItemSelectedListener(this);
+    }
+
+    // Spinner selection
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+        switch (position) {
+            case 0:
+                countSelection = "Player";
+                Toast.makeText(getApplicationContext(),"Player win count: " + countWin, Toast.LENGTH_SHORT).show();
+                break;
+            case 1:
+                countSelection = "Computer";
+                Toast.makeText(getApplicationContext(),"Computer win count: " + comCountWin, Toast.LENGTH_SHORT).show();
+                break;
+        }
+    }
+    @Override
+    public void onNothingSelected(AdapterView<?> parent) {
+        // TODO Auto-generated method stub
     }
 
     @Override
@@ -143,9 +173,10 @@ public class TicTacToeGame extends AppCompatActivity {
         if (endState == true) {
             if (player.equals("X")) {
                 countWin++;
-                player = "Player Won! Total win count is: " + countWin;
+                player = "Player Won!";
             } // End nested if
             else {
+                comCountWin++;
                 player = "Computer Won!";
             } // End nested else
         } // End if

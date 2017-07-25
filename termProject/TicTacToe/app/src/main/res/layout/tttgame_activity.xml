@@ -192,21 +192,40 @@
 
     <LinearLayout
         android:layout_width="fill_parent"
-        android:layout_height="50dp"
+        android:layout_height="wrap_content"
         android:background="#ffe8a0"
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/Reset"
+            android:id="@+id/winCountTextView"
             android:layout_width="match_parent"
-            android:layout_height="56dp"
-            android:clickable="true"
-            android:gravity="center"
-            android:onClick="resetClick"
-            android:text="RESET"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/win_count_text_view"
             android:textAlignment="center"
-            android:textColor="@color/colorAccent"
-            android:textSize="30sp"
+            android:textSize="20sp"
             android:textStyle="bold"/>
+
+        <Spinner
+            android:id="@+id/countSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:entries="@array/count_array"/>
+
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/Reset"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="#b8a38e"
+        android:clickable="true"
+        android:gravity="center"
+        android:onClick="resetClick"
+        android:text="RESET GAME"
+        android:textAlignment="center"
+        android:textColor="@color/colorAccent"
+        android:textSize="30sp"
+        android:textStyle="bold"/>
 </LinearLayout>

@@ -43,5 +43,13 @@
     <string name="show_winner"/>
     <string name="toggle_text">Check win time</string>
 
+    <!-- ttgame_activity -->
+    <string name="win_count_text_view">Check win counts</string>
+    <string-array name="count_array">
+        <item>Player</item>
+        <item>Computer</item>
+    </string-array>
+
+
 
 </resources>
