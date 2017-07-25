@@ -39,6 +39,8 @@
     <string name="goto_tttgame_buttoon">Play Tic Tac Toe</string>
     <string name="rating_text_label">Rate</string>
     <string name="rate_about_text">* Please rate the game</string>
+    <string name="show_winner_label">Winner of the Rock Paper Scissors :</string>
+    <string name="show_winner"/>
 
 
 </resources>

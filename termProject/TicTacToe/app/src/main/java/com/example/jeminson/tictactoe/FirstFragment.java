@@ -40,7 +40,7 @@ public class FirstFragment extends Fragment implements OnClickListener {
 
     boolean showImages;
 
-    private String imageName;
+    //private String imageName;
     private String playerNameText = "";
 
 
@@ -106,6 +106,8 @@ public class FirstFragment extends Fragment implements OnClickListener {
 
     private void goToPlay() {
         Intent intent = new Intent(getActivity(), SecondActivity.class);
+        String winner = (String)winnerText.getText();
+        intent.putExtra("winnerText",winner);
         startActivity(intent);
     }
 

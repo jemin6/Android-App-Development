@@ -12,7 +12,10 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.view.View.OnClickListener;
 import android.widget.RatingBar;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import org.w3c.dom.Text;
 
 
 /**
@@ -26,6 +29,7 @@ public class SecondFragment extends Fragment implements OnClickListener {
 
     private Button gotoTTTGameButton;
     private RatingBar ratingBar;
+    private TextView showWinner;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -49,6 +53,8 @@ public class SecondFragment extends Fragment implements OnClickListener {
 
         gotoTTTGameButton = (Button) view.findViewById(R.id.gotoTTTGameButton);
         gotoTTTGameButton.setOnClickListener(this);
+
+        showWinner = (TextView) view.findViewById(R.id.showWinner);
 
         ratingBar = (RatingBar) view.findViewById(R.id.ratingBar);
         ratingBar.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
@@ -94,16 +100,17 @@ public class SecondFragment extends Fragment implements OnClickListener {
     }
 */
 
-    /*
-    public void onPause() {
-
-    }
 
     // To restore values
     @Override
     public void onResume() {
         super.onResume();
 
+        // Get data from the FirstFragment
+        Intent intent = getActivity().getIntent();
+        String winner = intent.getExtras().getString("winnerText");
+
+        showWinner.setText(winner);
     }
-    */
+
 }
