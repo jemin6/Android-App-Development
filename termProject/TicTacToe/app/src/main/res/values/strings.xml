@@ -19,9 +19,9 @@
     <!-- about_activity -->
     <string name="about_menu_head">* Welcome *</string>
     <string name="about_menu_p1">1) Set player name on Setting menu</string>
-    <string name="about_menu_p2">2) Enter rock, paper, or scissor to decide who will go first</string>
+    <string name="about_menu_p2">2) Enter rock, paper, or scissor to play the game</string>
     <string name="about_menu_p3">3) Then, press [NEXT] button</string>
-    <string name="about_menu_p4">4) </string>
+    <string name="about_menu_p4">4) Ignore rating until you go play tic tac toe</string>
     <string name="about_menu_p5">5) Go play the Tic Tac Toe</string>
 
     <!-- menu.xml -->
@@ -41,6 +41,7 @@
     <string name="rate_about_text">* Please rate the game</string>
     <string name="show_winner_label">Winner of the Rock Paper Scissors :</string>
     <string name="show_winner"/>
+    <string name="toggle_text">Check win time</string>
 
 
 </resources>

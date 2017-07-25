@@ -54,6 +54,7 @@ public class TicTacToeGame extends AppCompatActivity {
 
     public void resetClick(View v) {
         clearBoard();
+        countWin = 0;
         if (computerMark == "X") {
             getComputerMove(gameBoard);
         } // End if
@@ -230,4 +231,7 @@ public class TicTacToeGame extends AppCompatActivity {
             isOver = checkEnd(computerMark);
         } // End if statement
     }
+
+
+
 }

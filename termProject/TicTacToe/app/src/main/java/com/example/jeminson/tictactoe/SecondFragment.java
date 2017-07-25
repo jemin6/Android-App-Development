@@ -11,9 +11,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.view.View.OnClickListener;
+import android.widget.CompoundButton;
 import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.ToggleButton;
 
 import org.w3c.dom.Text;
 
@@ -30,6 +32,8 @@ public class SecondFragment extends Fragment implements OnClickListener {
     private Button gotoTTTGameButton;
     private RatingBar ratingBar;
     private TextView showWinner;
+    private TextView toggleText;
+    private ToggleButton toggleButton;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -55,6 +59,22 @@ public class SecondFragment extends Fragment implements OnClickListener {
         gotoTTTGameButton.setOnClickListener(this);
 
         showWinner = (TextView) view.findViewById(R.id.showWinner);
+
+        toggleText = (TextView) view.findViewById(R.id.toggleText);
+        toggleButton = (ToggleButton) view.findViewById(R.id.toggleButton);
+
+        toggleText.setText("OFF");
+        toggleButton.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
+                if(isChecked) {
+                    toggleText.setText("On");
+                } else {
+                    toggleText.setText("Off");
+                }
+            }
+        });
+
 
         ratingBar = (RatingBar) view.findViewById(R.id.ratingBar);
         ratingBar.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
