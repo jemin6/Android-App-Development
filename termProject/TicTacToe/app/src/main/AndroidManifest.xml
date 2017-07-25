@@ -29,6 +29,7 @@
         <activity
             android:name=".TicTacToeGame"
             android:label="@string/tttgame_activity_title"
+            android:configChanges="orientation|screenSize"
             android:parentActivityName=".SecondActivity">
 
         </activity>

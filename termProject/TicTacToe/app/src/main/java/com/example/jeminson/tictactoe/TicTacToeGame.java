@@ -6,6 +6,7 @@ package com.example.jeminson.tictactoe;
 
 
 import android.content.Context;
+import android.content.res.Configuration;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -43,6 +44,12 @@ public class TicTacToeGame extends AppCompatActivity {
         //Set up for initial variables
         gameBoard = new TicTacToeGameBoard();
         computer = new TicTacToeComputerPlay(computerMark);
+    }
+
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        // TODO Auto-generated method stub
+        super.onConfigurationChanged(newConfig);
     }
 
     public void resetClick(View v) {
